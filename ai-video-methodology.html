@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="通用的 AI 辅助企业宣传片制作方法论，并以仁济医院能源数智化项目说明具体执行流程。">
+  <title>AI 宣传片制作方法论 V1.0</title>
+  <style>
+    :root {
+      --paper: #f4f5f2;
+      --card: #ffffff;
+      --ink: #171b1a;
+      --muted: #63706c;
+      --line: #d9dfdc;
+      --deep: #173f38;
+      --green: #2e7b66;
+      --soft: #e9f1ed;
+      --amber: #a06c27;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(23, 63, 56, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, p, li { overflow-wrap: anywhere; }
+    a { color: inherit; }
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(217, 223, 220, .9);
+      background: rgba(244, 245, 242, .94);
+      backdrop-filter: blur(16px);
+    }
+    .bar {
+      width: min(1180px, calc(100% - 36px));
+      min-height: 66px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+    .brand span { color: var(--green); margin-right: 8px; }
+    nav { display: flex; gap: 18px; font-size: 14px; color: var(--muted); }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .back {
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    main { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .hero {
+      min-height: 560px;
+      padding: 92px 0 68px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, .8fr);
+      gap: 54px;
+      align-items: center;
+    }
+    .hero > *, .section-head > *, .stage > *, .boundary > *, .renji-grid > *, .gate-grid > * { min-width: 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 32px; height: 2px; background: currentColor; }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.08;
+      letter-spacing: -.055em;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: #46514e;
+      font-size: clamp(17px, 2vw, 21px);
+    }
+    .hero-note {
+      padding: 28px;
+      color: #fff;
+      border-radius: 24px;
+      background: var(--deep);
+      box-shadow: var(--shadow);
+    }
+    .hero-note small { color: #aed0c6; font-weight: 700; }
+    .hero-note strong { display: block; margin: 10px 0 14px; font-size: 24px; line-height: 1.35; }
+    .hero-note p { margin: 0; color: #dcebe6; }
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 0 0 82px;
+    }
+    .principle {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.62);
+    }
+    .principle b { display: block; margin-bottom: 6px; font-size: 18px; }
+    .principle span { color: var(--muted); font-size: 14px; }
+    section { padding: 78px 0; border-top: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr) minmax(240px, .5fr);
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+    .num { color: var(--green); font-size: 14px; font-weight: 800; letter-spacing: .12em; }
+    h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.18; letter-spacing: -.04em; }
+    .section-head p { margin: 3px 0 0; color: var(--muted); font-size: 15px; }
+    .flow { display: grid; gap: 18px; }
+    .stage {
+      display: grid;
+      grid-template-columns: 92px minmax(170px, .7fr) repeat(3, minmax(0, 1fr));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 6px 24px rgba(23, 63, 56, .04);
+    }
+    .stage > div { padding: 22px; border-left: 1px solid var(--line); }
+    .stage > div:first-child { border-left: 0; }
+    .stage-no {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--deep);
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .stage-title h3 { margin: 0 0 7px; font-size: 20px; line-height: 1.35; }
+    .stage-title span, .stage p { color: var(--muted); font-size: 14px; }
+    .stage h4 { margin: 0 0 7px; color: var(--green); font-size: 13px; letter-spacing: .04em; }
+    .stage p { margin: 0; }
+    .boundary, .renji-grid, .gate-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+    .panel h3 { margin: 0 0 16px; font-size: 22px; }
+    .panel ul { margin: 0; padding-left: 1.2em; }
+    .panel li + li { margin-top: 9px; }
+    .panel.ai { background: var(--soft); border-color: #c9dcd5; }
+    .route {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin: 26px 0 34px;
+    }
+    .route div {
+      min-height: 112px;
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--deep);
+      color: #fff;
+    }
+    .route b { display: block; margin-bottom: 6px; font-size: 15px; }
+    .route span { color: #c7ddd6; font-size: 12px; }
+    .code {
+      padding: 24px;
+      overflow: auto;
+      border-radius: var(--radius);
+      color: #ddede8;
+      background: #142724;
+      font: 13px/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .tool-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .tool {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+    .tool b { display: block; margin-bottom: 5px; }
+    .tool span { color: var(--muted); font-size: 13px; }
+    .tool a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .renji-grid { grid-template-columns: 1.05fr .95fr; }
+    .story { display: grid; gap: 10px; margin-top: 18px; }
+    .story div { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+    .story b { color: var(--green); }
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li { position: relative; padding: 10px 0 10px 30px; border-top: 1px solid var(--line); }
+    .checklist li::before { content: "□"; position: absolute; left: 0; color: var(--green); font-size: 20px; line-height: 1.35; }
+    .badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: var(--green);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .gates { width: 100%; border-collapse: collapse; background: var(--card); border-radius: var(--radius); overflow: hidden; }
+    .gates th, .gates td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .gates th { color: #fff; background: var(--deep); font-size: 13px; }
+    .gates td:first-child { width: 150px; font-weight: 800; }
+    .gates td { font-size: 14px; }
+    .decision {
+      margin: 72px 0 92px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      color: #fff;
+      border-radius: 26px;
+      background: var(--deep);
+      box-shadow: var(--shadow);
+    }
+    .decision h2 { font-size: clamp(28px, 3vw, 40px); }
+    .decision p { margin: 12px 0 0; color: #d2e5df; }
+    .decision a {
+      padding: 12px 18px;
+      color: var(--deep);
+      background: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    footer { padding: 26px 18px 44px; color: var(--muted); text-align: center; font-size: 13px; }
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 62px; }
+      .principles, .boundary, .renji-grid, .gate-grid, .tool-list { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 52px 1fr; }
+      .section-head p { grid-column: 2; }
+      .stage { grid-template-columns: 64px 1fr; }
+      .stage > div:nth-child(n+3) { grid-column: 2; border-top: 1px solid var(--line); border-left: 0; }
+      .stage-no { grid-row: 1 / 5; }
+      .route { grid-template-columns: repeat(2, 1fr); }
+      .decision { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      main, .bar { width: calc(100vw - 24px); max-width: calc(100vw - 24px); }
+      .bar { gap: 8px; }
+      .brand { min-width: 0; white-space: normal; font-size: 13px; }
+      .back { padding: 7px 10px; font-size: 0; }
+      .back::after { content: "返回"; font-size: 12px; }
+      h1 { font-size: 38px; word-break: break-all; }
+      .lead { font-size: 16px; }
+      .hero, .hero-note, .principles, .principle, section, .flow, .stage, .panel, .decision { width: 100%; max-width: 100%; }
+      .hero-note strong { font-size: 21px; }
+      section { padding: 58px 0; }
+      .section-head { display: block; }
+      .section-head .num { display: block; margin-bottom: 10px; }
+      .stage { grid-template-columns: 50px 1fr; }
+      .stage > div { padding: 18px; }
+      .route { grid-template-columns: 1fr 1fr; }
+      .story div { grid-template-columns: 1fr; gap: 2px; }
+      .gates { display: block; overflow-x: auto; white-space: normal; }
+      .decision { padding: 28px; }
+    }
+    @media print {
+      .top, .decision a, footer { display: none; }
+      body { background: #fff; }
+      main { width: 100%; }
+      section, .stage, .panel, .tool { break-inside: avoid; }
+      .hero { min-height: auto; padding-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="bar">
+      <div class="brand"><span>中金能源</span>影像制作标准</div>
+      <nav aria-label="页面导航">
+        <a href="#method">七阶段方法</a>
+        <a href="#boundary">人机边界</a>
+        <a href="#route">技术路线</a>
+        <a href="#renji">仁济执行</a>
+        <a href="#gates">验收门槛</a>
+      </nav>
+      <a class="back" href="index.html">返回运营方案</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Methodology V1.0</div>
+        <h1>AI 宣传片制作方法论</h1>
+        <p class="lead">一套可复用于企业实力片、平台产品片和项目案例片的生产流程。AI 负责提效和复现，真实现场、平台录屏、项目事实与最终判断仍由人负责。</p>
+      </div>
+      <aside class="hero-note">
+        <small>本页如何使用</small>
+        <strong>先按通用流程过关，再把仁济项目放进同一套门槛。</strong>
+        <p>每个阶段只回答三件事：产出什么、仁济怎么做、什么条件满足后才能进入下一步。</p>
+      </aside>
+    </div>
+
+    <div class="principles" aria-label="三项制作原则">
+      <div class="principle"><b>真实证据优先</b><span>现场、人物、录屏和运行记录是主证据；动画只解释看不见的关系。</span></div>
+      <div class="principle"><b>先粗剪，后包装</b><span>叙事、旁白和时长未锁定前，不投入复杂地图、粒子和数据动效。</span></div>
+      <div class="principle"><b>一个工程，多版输出</b><span>主片、短版、横竖版与无字幕底片从同一事实源和时间线派生。</span></div>
+    </div>
+
+    <section id="method">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>七阶段生产闭环</h2>
+        <p>阶段门槛没有通过，就不把问题带进下一环节。这样才能避免后期用特效补策划、用重剪补口径。</p>
+      </div>
+
+      <div class="flow">
+        <article class="stage">
+          <div class="stage-no">01</div>
+          <div class="stage-title"><h3>目标冻结</h3><span>先回答为什么拍、给谁看、看完做什么。</span></div>
+          <div><h4>通用产出</h4><p>一页项目简报：受众、用途、核心命题、时长、版本和最终审片人。</p></div>
+          <div><h4>仁济应用</h4><p>建议以约 3 分钟项目案例主片为母版，服务大会、汇报与客户交流。</p></div>
+          <div><h4>通过门槛</h4><p>正式项目名、具体院区、片尾名称排序及主片用途全部确认。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">02</div>
+          <div class="stage-title"><h3>事实与权限冻结</h3><span>把能说、能拍、能公开的范围写成清单。</span></div>
+          <div><h4>通用产出</h4><p>事实表、功能状态、数据口径、拍摄许可、肖像与品牌授权清单。</p></div>
+          <div><h4>仁济应用</h4><p>确认“已投入使用”、科室/楼宇分析、告警工单和智能分析的真实状态。</p></div>
+          <div><h4>通过门槛</h4><p>每条关键表述都有确认人；演示环境脱敏；不可拍区域和人员已标记。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">03</div>
+          <div class="stage-title"><h3>脚本与分镜</h3><span>旁白、画面和证据一一对应。</span></div>
+          <div><h4>通用产出</h4><p>旁白 V1、分段结构、镜头表、素材来源和缺口清单。</p></div>
+          <div><h4>仁济应用</h4><p>按“运行—痛点—共建—平台—闭环—价值—收口”组织 20 个执行镜头。</p></div>
+          <div><h4>通过门槛</h4><p>删掉全部特效后故事仍成立；每个主张都能找到现场或录屏证据。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">04</div>
+          <div class="stage-title"><h3>素材采集</h3><span>先按剪辑需求拍，不按“多拍一点”碰运气。</span></div>
+          <div><h4>通用产出</h4><p>现场全/中/近景、完整人物动作、干净录屏、环境声和当天双备份。</p></div>
+          <div><h4>仁济应用</h4><p>医院侧拍运行与处置；公司侧拍共建过程并录制平台完整操作路径。</p></div>
+          <div><h4>通过门槛</h4><p>告警到复核的动作链完整；关键界面有原始录屏；敏感信息复核通过。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">05</div>
+          <div class="stage-title"><h3>粗剪定结构</h3><span>只解决信息顺序、镜头可信度和节奏。</span></div>
+          <div><h4>通用产出</h4><p>临时配音、基础字幕、无复杂包装的完整时间线和缺镜清单。</p></div>
+          <div><h4>仁济应用</h4><p>先验证观众能否看懂平台如何从发现异常走到现场处理和结果回填。</p></div>
+          <div><h4>通过门槛</h4><p>事实顺序确认、旁白锁定、镜头无硬缺口；此后不再推翻影片结构。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">06</div>
+          <div class="stage-title"><h3>包装与声音</h3><span>动效解释业务，声音建立空间，不追求泛科技感。</span></div>
+          <div><h4>通用产出</h4><p>数据标注、流程动画、正式配音、环境声、音乐、SFX 与字幕。</p></div>
+          <div><h4>仁济应用</h4><p>重点包装数据汇聚和告警工单路径；旁白选择稳定、清楚的中性声线。</p></div>
+          <div><h4>通过门槛</h4><p>关键界面可读、音乐不压旁白、动画不虚构功能、术语和读音准确。</p></div>
+        </article>
+
+        <article class="stage">
+          <div class="stage-no">07</div>
+          <div class="stage-title"><h3>审片、交付与复盘</h3><span>审事实、审表达、审技术，不混在一轮意见里。</span></div>
+          <div><h4>通用产出</h4><p>终版主片、多版本输出、工程包、素材与授权、字幕和版本记录。</p></div>
+          <div><h4>仁济应用</h4><p>从主片派生 90 秒汇报版、30 秒预告版及 9:16 短版，不重新建立事实口径。</p></div>
+          <div><h4>通过门槛</h4><p>事实、隐私、画面、声音、编码和授权六类清单全部通过。</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="boundary">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>AI 与人的职责边界</h2>
+        <p>AI 不是事实来源，也不能替代院方、业务和技术团队作最终确认。</p>
+      </div>
+      <div class="boundary">
+        <article class="panel ai">
+          <span class="badge">AI 适合承担</span>
+          <h3>结构化、批量化、可重复的工作</h3>
+          <ul>
+            <li>把项目简报拆成旁白、分镜、拍摄清单和素材缺口。</li>
+            <li>比较版本差异，检查重复信息、字幕、节奏和关键帧。</li>
+            <li>生成可配置的 Remotion 动效、数据标注和多版时间线。</li>
+            <li>制作临时配音、音乐方向和 5—10 秒风格预演。</li>
+            <li>自动抽帧、转码、检查时长、音轨、编码和文件完整性。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <span class="badge">必须由人确认</span>
+          <h3>事实、授权、判断与最终发布</h3>
+          <ul>
+            <li>项目名称、平台功能、上线状态、数据口径和对外主张。</li>
+            <li>医院现场、客户名称、人员肖像、Logo 与屏幕内容授权。</li>
+            <li>真实操作是否符合业务流程，人物动作是否安全、可信。</li>
+            <li>旁白语气、品牌表达、关键镜头取舍和最终审片结论。</li>
+            <li>对外文件、发布渠道、发布时间与后续反馈处理。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="route">
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>GitHub 工程化技术路线</h2>
+        <p>GitHub 管版本和协作，Remotion 管确定性画面，FFmpeg 管交付检查；剪辑软件负责人工判断和最终时间线。</p>
+      </div>
+      <div class="route" aria-label="技术流程">
+        <div><b>事实源</b><span>facts.yaml<br>确认人、日期、公开边界</span></div>
+        <div><b>文案与分镜</b><span>copy.ts<br>storyboard / shot list</span></div>
+        <div><b>版本管理</b><span>Git 分支、提交记录与版本标签</span></div>
+        <div><b>动效渲染</b><span>video-shotcraft<br>Remotion</span></div>
+        <div><b>剪辑声音</b><span>剪映 / Premiere / Resolve</span></div>
+        <div><b>终检交付</b><span>FFmpeg / ffprobe<br>抽帧与哈希</span></div>
+      </div>
+      <div class="code" aria-label="推荐工程结构">renji-energy-film/
+  public/           # 脱敏实拍、录屏、Logo、字体与音频
+  src/
+    facts.yaml      # 已确认事实、来源、确认人和日期
+    copy.ts         # 旁白、标题、字幕与数字口径
+    timeline.ts     # 镜头时长、转场、音效钉帧
+    design.ts       # 品牌色、字体、字号和间距
+    shots/          # 每个镜头一个组件
+  docs/
+    brief.md        # 项目简报与受众
+    storyboard.xlsx # 分镜与素材映射
+    change-log.md   # 时间码、原因、修改和验收
+  out/              # 预览、主片、短版与质检图</div>
+      <div class="tool-list">
+        <div class="tool"><b><a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noreferrer">video-shotcraft</a></b><span>提供镜头配方、实拍与界面结合方式以及可复用组件思路。</span></div>
+        <div class="tool"><b><a href="https://github.com/remotion-dev/remotion" target="_blank" rel="noreferrer">Remotion</a></b><span>集中管理时间线、文案和动效，适合确定性重渲与多版本输出。</span></div>
+        <div class="tool"><b><a href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noreferrer">FFmpeg</a></b><span>负责转码、抽帧、响度处理、音视频流检查和交付质检。</span></div>
+      </div>
+    </section>
+
+    <section id="renji">
+      <div class="section-head">
+        <span class="num">04</span>
+        <h2>仁济项目如何按这套方法开工</h2>
+        <p>目前最重要的不是继续做包装，而是一次性锁定事实、权限、演示环境与素材采集。</p>
+      </div>
+      <div class="renji-grid">
+        <article class="panel">
+          <span class="badge">建议的三分钟叙事</span>
+          <h3>从医院持续运行进入，用一条闭环证明平台价值</h3>
+          <div class="story">
+            <div><b>0:00–0:45</b><span>医院运行与管理挑战：能源保障、人工巡检、分散记录和多系统切换。</span></div>
+            <div><b>0:45–1:08</b><span>院方与技术团队共同梳理业务、设备和数据关系。</span></div>
+            <div><b>1:08–1:40</b><span>真实录屏展示总览、筛选、趋势和异常发现。</span></div>
+            <div><b>1:40–2:34</b><span>告警、派单、现场处置、结果回填和分析参考形成闭环。</span></div>
+            <div><b>2:34–3:00</b><span>回到院方实际使用和稳定运行，以项目价值与双方品牌收口。</span></div>
+          </div>
+        </article>
+        <article class="panel">
+          <span class="badge">开拍前六项确认</span>
+          <h3>六项齐备后再进入拍摄和粗剪</h3>
+          <ul class="checklist">
+            <li>正式项目名称、具体院区与片尾双方名称排序。</li>
+            <li>平台已上线功能及“已投入使用”的适用范围。</li>
+            <li>医院可进入区域、出镜人员和不可拍内容。</li>
+            <li>演示账号、脱敏数据和一条稳定的完整操作路径。</li>
+            <li>可公开的项目画面、客户标识和数据口径。</li>
+            <li>唯一终审人、集中反馈方式和每轮截止时间。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <span class="badge">两天采集</span>
+          <h3>第 1 天医院，第 2 天公司与录屏</h3>
+          <ul>
+            <li><b>医院：</b>外景、公共空间、机房设备、巡检、控制中心和异常处置完整动作。</li>
+            <li><b>公司：</b>会议、白板、研发测试、平台高清录屏和缺失镜头补录。</li>
+            <li><b>最低标准：</b>每个关键动作至少两个角度；录屏保持 1920×1080、无通知、无敏感信息。</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <span class="badge">同源交付</span>
+          <h3>先做好主片，再派生其他版本</h3>
+          <ul>
+            <li>约 3 分钟 16:9 主片，带字幕、旁白、BGM 与必要音效。</li>
+            <li>90 秒汇报版、30 秒预告版及重新排版的 9:16 短版。</li>
+            <li>无 BGM 版、无字幕底片、旁白干声、SRT 字幕和工程素材包。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="gates">
+      <div class="section-head">
+        <span class="num">05</span>
+        <h2>四个验收门槛</h2>
+        <p>每轮只审一种问题。反馈必须带时间码、事实来源、修改原因和确认人。</p>
+      </div>
+      <table class="gates">
+        <thead><tr><th>门槛</th><th>本轮只确认什么</th><th>不在本轮处理</th><th>通过标准</th></tr></thead>
+        <tbody>
+          <tr><td>G1 脚本门</td><td>受众、核心命题、事实、旁白与镜头证据。</td><td>字体、粒子、复杂调色和正式配音。</td><td>每个主张可核验，事实与授权清单齐备。</td></tr>
+          <tr><td>G2 粗剪门</td><td>结构、时长、镜头真实性、信息顺序和素材缺口。</td><td>最终音效、复杂动效和品牌细节。</td><td>静音也能看懂，删掉特效故事仍成立。</td></tr>
+          <tr><td>G3 精剪门</td><td>节奏、录屏可读性、字幕、调色、旁白和包装。</td><td>新增主张和结构性重写。</td><td>关键界面停留充分，声音清楚，动画不虚构。</td></tr>
+          <tr><td>G4 发布门</td><td>事实、隐私、授权、Logo、编码、响度和版本归档。</td><td>偏好性的大改和新创意。</td><td>交付清单、工程、素材、授权与哈希完整。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="decision">
+      <div>
+        <h2>仁济项目下一步：先开一次启动会，不先做新特效。</h2>
+        <p>会议只解决六项开拍条件，随后按两天采集计划取材，先交粗剪，再进入包装与正式配音。</p>
+      </div>
+      <a href="#renji">查看开拍清单</a>
+    </div>
+  </main>
+
+  <footer>AI 宣传片制作方法论 V1.0 · 2026 年 11 月 6 日 · 方法适用于企业片、产品片与项目案例片</footer>
+</body>
+</html>
