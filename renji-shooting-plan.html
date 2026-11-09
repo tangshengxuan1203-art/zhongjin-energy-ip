@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="仁济医院能源数智化项目宣传片的拍摄策划：开拍前确认、旁白与分镜、两天日程、现场规矩、后期交付与下一步。">
+  <meta name="description" content="仁济医院能源数智化项目宣传片的拍摄方案：结论与决策、汇报口径、前期准备、设备与品牌露出、脚本与旁白、后期剪辑与效果、下一步。">
   <link rel="icon" href="data:,">
   <title>仁济项目宣传片拍摄方案</title>
   <style>
@@ -49,7 +49,7 @@
       gap: 20px;
     }
     .brand { font-weight: 700; color: var(--muted); font-size: 14px; white-space: nowrap; }
-    nav { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+    nav { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
     nav a { text-decoration: none; }
     nav a:hover { color: var(--ink); }
     .btn {
@@ -64,8 +64,9 @@
       white-space: nowrap;
     }
     .btn:hover { border-color: var(--green); color: var(--green); }
+    .actions { display: flex; gap: 8px; }
     main { width: min(1120px, calc(100% - 40px)); margin: auto; }
-    .hero { padding: 76px 0 8px; max-width: 840px; }
+    .hero { padding: 76px 0 8px; max-width: 850px; }
     .eyebrow { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .1em; }
     h1 {
       margin: 14px 0 0;
@@ -94,6 +95,10 @@
       background: var(--warn-soft);
       font-size: 14.5px;
     }
+    .decide { margin: 34px 0 0; padding: 22px 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+    .decide h3 { margin: 0 0 12px; font-size: 19px; }
+    .decide ol { margin: 0; padding-left: 1.3em; }
+    .decide li + li { margin-top: 9px; }
     section { padding: 62px 0; border-bottom: 1px solid var(--line); }
     .section-head { margin-bottom: 30px; }
     .section-head h2 {
@@ -140,6 +145,7 @@
     .shot h5 { margin: 0 0 5px; color: var(--green); font-size: 12px; font-weight: 700; }
     .shot p { margin: 0; font-size: 13.5px; line-height: 1.7; }
     .shot strong { display: block; margin-bottom: 3px; }
+    .shot .brand-mark { color: var(--green); font-weight: 700; }
     .group-title { margin: 34px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 700; }
     .checklist { list-style: none; padding: 0; margin: 0; }
     .checklist li { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
@@ -198,14 +204,18 @@
     <div class="bar">
       <div class="brand">中金能源 · 仁济项目宣传片</div>
       <nav aria-label="页面导航">
-        <a href="#confirm">开拍前确认</a>
-        <a href="#content">讲什么拍什么</a>
-        <a href="#execute">怎么拍</a>
-        <a href="#standard">现场规矩</a>
-        <a href="#post">后期交付</a>
+        <a href="#decision">结论</a>
+        <a href="#talk">汇报口径</a>
+        <a href="#prepare">前期准备</a>
+        <a href="#gear">设备与品牌</a>
+        <a href="#script">脚本旁白</a>
+        <a href="#post">后期效果</a>
         <a href="#next">下一步</a>
       </nav>
-      <a class="btn" href="ai-video-methodology.html">返回方法论</a>
+      <div class="actions">
+        <a class="btn" href="ai-video-methodology.html">返回方法论</a>
+        <button class="btn" type="button" onclick="window.print()">打印</button>
+      </div>
     </div>
   </header>
 
@@ -221,11 +231,56 @@
         <div><b>4 道门槛</b>脚本、粗剪、精剪、发布</div>
       </div>
       <p class="note">正式项目名称、具体院区、平台功能上线状态、“已投入使用”的适用范围、可公开数据和片尾署名，这六项在确认之前不能写进任何对外材料。</p>
+      <div class="decide" id="decision">
+        <h3>需要今天决定的三件事</h3>
+        <ol>
+          <li>立项方式：按主片加同源派生版本一次拍摄多次使用，还是各做一支独立短片。建议前者。</li>
+          <li>院方协调：拍摄日期、可进入区域和出镜人员由谁出面与院方对接。</li>
+          <li>审片机制：指定一位唯一终审人，并约定每一轮修改的截止时间。</li>
+        </ol>
+      </div>
     </div>
 
-    <section id="confirm">
+    <section id="talk">
       <div class="section-head">
-        <h2><span>一</span>开拍前要确认的六件事</h2>
+        <h2><span>一</span>汇报口径</h2>
+        <p>下面文字可直接照读，括号内是动作提示，不要读出来。</p>
+      </div>
+      <h3>30 秒版，给领导和跨部门</h3>
+      <div class="script">
+        <span class="label">照读</span>
+        <p>下一步要拍一支仁济项目的宣传片，重点不是再加工效，而是补上真实证据：医院现场怎么跑、设备怎么管、平台怎么把告警变成一条能闭环的工单。计划两天拍完，第一天在医院，第二天在公司录平台，主片约 3 分钟，之后派生 90 秒、30 秒和竖版。片子能不能拍，只取决于六件事能不能先确认——项目名、院区、功能状态、拍摄权限、演示账号和最终审片人。今天希望能把人和时间定下来。</p>
+      </div>
+      <h3>3 分钟版，给执行团队和项目方</h3>
+      <div class="script">
+        <span class="label">照读</span>
+        <p>先说背景。v38 主片技术上已经定版，动效、地图、数据墙都完成了，问题不在画面，在于片子里没有真实的人、真实的机房、真实的一次告警处置。医院和行业客户看完最想知道两件事：项目到底落地没有，平台到底有没有在用。这两件事靠动效说不清楚，只能靠拍。</p>
+        <p>片子分四段证据：医院持续运行，说明能源与后勤保障和医疗连续性的关系；管理挑战，说明人工巡检和分散记录的成本；平台录屏，说明统一接入之后怎么看、怎么发现异常；最后是闭环，从告警生成、派单、人员到现场处置、结果回填，到任务完成，全过程拍完整。这条闭环是整支片子的核心证据，也是最难补拍的部分，所以排在最后一天。</p>
+        <p>拍摄分两天。第一天在医院，上午拍外景、公共空间、机房设备和巡检记录，下午拍控制中心的真实操作和一次完整的异常处置演练。第二天在公司，上午拍会议和白板，下午做平台高清录屏。拍摄前一天先安排一次 45 分钟勘景和一次 60 分钟平台演练，演练不通过就不进拍摄日。所有镜头按镜号命名，当天做两份独立备份，隐私和操作完整性在离场前逐条核对。</p>
+        <p>这次拍摄会安排我方工程师统一着中金能源工装出场，机房现场、处置动作和会议讨论都会带到人，片尾双方标识并列。这一点是给客户和行业观众看的“是我们的人在现场做事”，不是贴个 logo。</p>
+        <p>三条红线：不停机、不改任何设备参数、不进临床和诊疗区域；只用演示环境的脱敏数据，不碰生产账号；不承诺任何未经核验的节能率和费用数字。</p>
+        <p>主片大约 3 分钟，之后从同一条时间线派生 90 秒汇报版、30 秒预告版和竖屏版，一次拍摄多次使用。后期先粗剪、再精剪、再包装，结构锁定之前不做复杂动效。需要支持的是三件事：一次 60 分钟启动会、一次勘景和演练、两天拍摄时间，以及一个唯一的终审人。</p>
+      </div>
+
+      <h3>常见问题</h3>
+      <dl class="qa">
+        <dt>拍摄会不会影响医院运行？</dt>
+        <dd>不会。拍摄在可控区域进行，不停机、不改参数、不进入临床和诊疗区域，机房内所有动作由现场负责人先确认安全再执行。院方可以指定陪同人与不可拍清单，按清单执行即可。</dd>
+        <dt>平台数据能不能真的拍？</dt>
+        <dd>能，但只用演示环境和脱敏数据，不使用生产环境账号。录制前关闭通知、聊天工具和自动填充，画面里不会出现真实姓名、手机号、床号或密钥。</dd>
+        <dt>能不能在片子里说节能率是多少？</dt>
+        <dd>不能，除非项目方提供带明确口径、周期和数据来源的数字。默认片中不出现节能率和费用数字，只讲方法和过程，对外沟通更安全，也经得起追问。</dd>
+        <dt>两天时间够吗？</dt>
+        <dd>够，因为 20 个镜头已经按优先级排好。极端情况下优先保三组：闭环动作、机房设备细节、工程师真实操作；外景和空间画面可以另约半天补拍，不影响主线成立。</dd>
+        <dt>为什么不直接做成片，先做粗剪？</dt>
+        <dd>结构没锁定就做动效，改一次结构就要重渲一次包装，是最贵的返工。粗剪只要 3 到 4 天，用临时配音就能验证事实、顺序和闭环是否成立，确认后再投入配音和包装，总时长反而更短。</dd>
+      </dl>
+      <p style="margin-top:22px">口径上守住三条：不说“已全面上线”“覆盖全院所有系统”，只说“在已确认的这些场景投入使用”；不说具体节能率和费用数字，只讲方法与过程；不说“一次搞定所有版本”，只说“同源派生”。</p>
+    </section>
+
+    <section id="prepare">
+      <div class="section-head">
+        <h2><span>二</span>前期准备</h2>
         <p>这六项不齐就不启动拍摄。每项都写清楚要产出什么、谁负责、什么时候给。</p>
       </div>
       <div class="table-wrap">
@@ -236,200 +291,107 @@
             <tr><td>功能与成效口径</td><td>平台已上线功能；“已投入使用”的适用范围；科室、楼宇分析是否成立；智能分析能否展示</td><td>可展示功能清单、禁用表述清单</td><td>技术审核人</td><td>启动会当天</td></tr>
             <tr><td>拍摄权限与人员</td><td>可进入区域、不可拍区域、拍摄日期、出镜人员、肖像授权、院方陪同人</td><td>拍摄许可 + 授权一页纸</td><td>院方协调人</td><td>启动会后 2 个工作日</td></tr>
             <tr><td>平台演示准备</td><td>演示账号、脱敏数据、一条完整操作路径、需要回避的界面</td><td>彩排通过的录屏样片</td><td>平台演示人员</td><td>拍摄前 3 天</td></tr>
-            <tr><td>品牌与授权</td><td>Logo 源文件、标准色、字体授权、音乐方向、可公开范围</td><td>品牌与授权清单</td><td>品牌传播</td><td>拍摄前 3 天</td></tr>
+            <tr><td>品牌与授权</td><td>Logo 源文件、标准色、工装标识、音乐方向、可公开范围</td><td>品牌与授权清单</td><td>品牌传播</td><td>拍摄前 3 天</td></tr>
             <tr><td>审片机制</td><td>唯一终审人、各审核范围、每轮修改次数与截止时间</td><td>审片流程确认</td><td>项目负责人</td><td>启动会当天</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3>怎么向领导汇报</h3>
-      <div class="script">
-        <span class="label">30 秒</span>
-        <p>下一步要拍一支仁济项目的宣传片，重点不是再加工效，而是补上真实证据：医院现场怎么跑、设备怎么管、平台怎么把告警变成一条能闭环的工单。计划两天拍完，第一天在医院，第二天在公司录平台，主片约 3 分钟，之后派生 90 秒、30 秒和竖版。能不能拍，只取决于六件事能不能先确认——项目名、院区、功能状态、拍摄权限、演示账号和最终审片人。今天希望能把人和时间定下来。</p>
-      </div>
-      <div class="script">
-        <span class="label">3 分钟</span>
-        <p>先说背景。v38 主片技术上已经定版，动效、地图、数据墙都完成了，问题不在画面，在于片子里没有真实的人、真实的机房、真实的一次告警处置。医院和行业客户看完最想知道两件事：项目到底落地没有，平台到底有没有在用。这两件事靠动效说不清楚，只能靠拍。</p>
-        <p>片子分四段证据：医院持续运行，说明能源与后勤保障和医疗连续性的关系；管理挑战，说明人工巡检和分散记录的成本；平台录屏，说明统一接入之后怎么看、怎么发现异常；最后是闭环，从告警生成、派单、人员到现场处置、结果回填，到任务完成，全过程拍完整。这条闭环是整支片子的核心证据，也是最难补拍的部分，所以排在最后一天。</p>
-        <p>拍摄分两天。第一天在医院，上午拍外景、公共空间、机房设备和巡检记录，下午拍控制中心的真实操作和一次完整的异常处置演练。第二天在公司，上午拍会议和白板，下午做平台高清录屏。拍摄前一天先安排一次 45 分钟勘景和一次 60 分钟平台演练，演练不通过就不进拍摄日。所有镜头按镜号命名，当天做两份独立备份，隐私和操作完整性在离场前逐条核对。</p>
-        <p>三条红线：不停机、不改任何设备参数、不进临床和诊疗区域；只用演示环境的脱敏数据，不碰生产账号；不承诺任何未经核验的节能率和费用数字。</p>
-        <p>主片大约 3 分钟，之后从同一条时间线派生 90 秒汇报版、30 秒预告版和竖屏版，一次拍摄多次使用。后期先粗剪、再精剪、再包装，结构锁定之前不做复杂动效。需要支持的是三件事：一次 60 分钟启动会、一次勘景和演练、两天拍摄时间，以及一个唯一的终审人。</p>
-      </div>
-
-      <h3>常见问题</h3>
-      <dl class="qa">
-        <dt>拍摄会不会影响医院运行？</dt>
-        <dd>不会。拍摄在可控区域进行，不停机、不改参数、不进入临床和诊疗区域，机房内所有动作由现场负责人先确认安全再执行。院方可以指定陪同人与不可拍清单，按清单执行即可。</dd>
-        <dt>平台数据能不能真的拍？</dt>
-        <dd>能，但只用演示环境和脱敏数据，不使用生产环境账号。录制前会关闭通知、聊天工具和自动填充，画面里不会出现真实姓名、手机号、床号或密钥。</dd>
-        <dt>能不能在片子里说节能率是多少？</dt>
-        <dd>不能，除非项目方提供带明确口径、周期和数据来源的数字。默认片中不出现节能率和费用数字，只讲方法和过程，对外沟通更安全，也经得起追问。</dd>
-        <dt>两天时间够吗？</dt>
-        <dd>够，因为 20 个镜头已经按优先级排好。极端情况下优先保三组：闭环动作、机房设备细节、院方真实操作；外景和空间画面可以另约半天补拍，不影响主线成立。</dd>
-        <dt>为什么不直接做成片，先做粗剪？</dt>
-        <dd>结构没锁定就做动效，改一次结构就要重渲一次包装，是最贵的返工。粗剪只要 3 到 4 天，用临时配音就能验证事实、顺序和闭环是否成立，确认后再投入配音和包装，总时长反而更短。</dd>
-      </dl>
-      <p style="margin-top:22px">口径上守住三条：不说“已全面上线”“覆盖全院所有系统”，只说“在已确认的这些场景投入使用”；不说具体节能率和费用数字，只讲方法与过程；不说“一次搞定所有版本”，只说“同源派生”。</p>
-    </section>
-
-    <section id="content">
-      <div class="section-head">
-        <h2><span>二</span>讲什么，拍什么</h2>
-        <p>先定叙事，再定镜头，最后定旁白。这里的旁白是拍摄依据，不是最终对外文案。</p>
-      </div>
-      <h3>三分钟的骨架</h3>
+      <h3>勘景与演练</h3>
       <ul>
-        <li>0:00–0:45　医院持续运行与管理挑战</li>
-        <li>0:45–1:08　院方与技术团队共同梳理业务、设备和数据</li>
-        <li>1:08–1:40　平台总览、多维分析与异常发现</li>
-        <li>1:40–2:34　告警、派单、现场处置、结果回填形成闭环</li>
-        <li>2:34–3:00　真实使用与品牌收口</li>
+        <li>现场勘景 45 分钟：确认机房机位、光线、噪声和可进入区域，测试快门与收音，判断哪些镜头能在稳定机位完成。</li>
+        <li>平台演练 60 分钟：按最终旁白顺序完整走一遍操作路径，录一份样片，确认哪些功能可展示、哪些需要回避。</li>
+        <li>演练不通过就不进拍摄日：这是时间成本最低的一道保险，出问题的当天补拍成本远高于演练。</li>
       </ul>
 
-      <h3>旁白工作稿</h3>
-      <div class="panel">
-        <div class="voice"><time>0:00–0:22</time><p>一座医院每一天的高效运转，离不开看不见的能源与后勤保障。从供配电、空调到给排水，每一套系统、每一台设备，都关系着医疗服务的安全与连续。</p></div>
-        <div class="voice"><time>0:22–0:45</time><p>随着院区规模和设备数量不断增加，人工巡检、分散记录以及多套系统之间的来回切换，让信息难以及时汇总，也增加了发现异常、追踪问题和协同处置的难度。</p></div>
-        <div class="voice"><time>0:45–1:08</time><p>围绕项目的实际管理需求，院方与技术团队共同梳理业务流程、设备体系和管理重点，推进能源与后勤管理平台建设。通过统一接入相关设备和系统数据，逐步形成覆盖采集、分析、告警和处置的管理基础。</p></div>
-        <div class="voice"><time>1:08–1:40</time><p>在统一平台上，管理人员可以集中查看能源使用和设备运行情况，并按已具备的管理维度进行分析。趋势、对比和关键状态被放在同一条信息链中，帮助管理人员更及时地掌握变化、发现异常。</p></div>
-        <div class="voice"><time>1:40–2:12</time><p>当设备状态偏离正常范围，系统可以按照已配置的流程生成告警和任务。责任人员接收信息、到达现场、核对设备、反馈处理结果，工单状态随之更新，让问题从发现、派发到处置和复核形成闭环。</p></div>
-        <div class="voice"><time>2:12–2:34</time><p>在真实运行数据持续积累的基础上，分析能力可以结合历史趋势和设备状态，辅助识别异常线索，为运行调整、维护安排和后续分析提供参考。它不替代人员判断，而是为判断提供更完整的数据依据。</p></div>
-        <div class="voice"><time>2:34–2:51</time><p>平台当前已投入使用的范围和场景须由项目团队确认。经确认后，可说明其如何为后勤管理提供实时、直观的运行支撑，并推动信息统一呈现、过程留痕和协同处置。</p></div>
-        <div class="voice"><time>2:51–3:00</time><p>让能源与后勤管理更安全、更高效、更清晰，为医院高质量运行提供持续保障。</p></div>
-      </div>
-
-      <h3>20 个镜头</h3>
-      <p>每个动作至少拍完整一遍，再补全景、中景和细节。现场离开前按镜号核对，不依赖后期想办法。</p>
-
-      <p class="group-title">A｜医院持续运行与管理挑战</p>
-      <article class="shot"><div class="shot-id"><div><b>01</b><span>0:00–0:08</span></div></div><div><h5>画面</h5><p><strong>医院外景与院区标识</strong>清晨或傍晚建筑全景、入口与环境。</p></div><div><h5>机位与动作</h5><p>三脚架静态加稳定器慢推各一条；每条保留 10 秒头尾。</p></div><div><h5>现场要求</h5><p>避开车牌和可识别患者；单录 30 秒环境声。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>02</b><span>0:08–0:15</span></div></div><div><h5>画面</h5><p><strong>公共空间正常运行</strong>大厅、走廊或后勤通道的秩序感。</p></div><div><h5>机位与动作</h5><p>广角固定或低速横移；人物只作环境尺度，不追拍正脸。</p></div><div><h5>现场要求</h5><p>院方先确认可拍区域；发现病历、屏幕或患者正脸立即停机。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>03</b><span>0:15–0:22</span></div></div><div><h5>画面</h5><p><strong>机房与关键设备</strong>配电、冷机、水泵、管路、仪表。</p></div><div><h5>机位与动作</h5><p>全景交代空间，中景呈现系统，特写拍运行细节。</p></div><div><h5>现场要求</h5><p>佩戴规定防护用品；不触碰设备，不挡通道，不摆拍危险动作。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>04</b><span>0:22–0:32</span></div></div><div><h5>画面</h5><p><strong>传统巡检与记录</strong>走近设备、看表、核对、手写或移动记录。</p></div><div><h5>机位与动作</h5><p>先完整动作，再拍手部、仪表和记录特写；每个动作两遍。</p></div><div><h5>现场要求</h5><p>记录内容使用脱敏样例；动作由真实岗位人员确认。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>05</b><span>0:32–0:45</span></div></div><div><h5>画面</h5><p><strong>信息分散</strong>多个窗口、表格或纸质记录之间切换。</p></div><div><h5>机位与动作</h5><p>越肩实拍人物操作，同时采集一份干净的屏幕录制。</p></div><div><h5>现场要求</h5><p>使用演示数据；关闭通知、聊天、自动填充和历史记录。</p></div></article>
-
-      <p class="group-title">B｜共同建设与平台总览</p>
-      <article class="shot"><div class="shot-id"><div><b>06</b><span>0:45–0:54</span></div></div><div><h5>画面</h5><p><strong>院方与技术团队会议</strong>平面图、流程资料和业务讨论。</p></div><div><h5>机位与动作</h5><p>侧面双人中景、手部和资料特写；不收正式对话内容。</p></div><div><h5>现场要求</h5><p>桌面文件提前脱敏；安排真实参与人员，不使用夸张表演。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>07</b><span>0:54–1:01</span></div></div><div><h5>画面</h5><p><strong>白板梳理关系</strong>设备、数据、告警和处置路径。</p></div><div><h5>机位与动作</h5><p>正面白板加侧后方人物；写下三到五个真实节点即可。</p></div><div><h5>现场要求</h5><p>拍前由技术人员确认关系，不出现客户敏感结构和接口地址。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>08</b><span>1:01–1:08</span></div></div><div><h5>画面</h5><p><strong>测试与接入</strong>演示环境状态从待确认到正常。</p></div><div><h5>机位与动作</h5><p>研发操作中景加状态变化录屏；镜头停留至少 4 秒。</p></div><div><h5>现场要求</h5><p>不得展示密码、密钥、真实 IP、敏感代码和生产环境地址。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>09</b><span>1:08–1:20</span></div></div><div><h5>画面</h5><p><strong>平台总览</strong>进入项目主页，呈现设备和运行状态。</p></div><div><h5>机位与动作</h5><p>录屏为主；人物越肩操作作证据，后期采用缓慢推近。</p></div><div><h5>现场要求</h5><p>录屏 1920×1080 以上；光标路径提前排练，不来回寻找。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>10</b><span>1:20–1:31</span></div></div><div><h5>画面</h5><p><strong>管理维度切换</strong>只演示一个筛选动作和一个结果。</p></div><div><h5>机位与动作</h5><p>完整录制点击前后状态；后期只放大关键区域。</p></div><div><h5>现场要求</h5><p>区域、楼宇或科室等维度必须是当前已具备功能。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>11</b><span>1:31–1:40</span></div></div><div><h5>画面</h5><p><strong>趋势与异常点</strong>历史曲线、对比和一个可解释的变化。</p></div><div><h5>机位与动作</h5><p>录屏停留 6 到 8 秒；后期用标注圈出异常点，不重画假曲线。</p></div><div><h5>现场要求</h5><p>不展示未经核验的节能率、费用节余或效果数字。</p></div></article>
-
-      <p class="group-title">C｜告警、任务与现场处置闭环（不可补拍，优先级最高）</p>
-      <article class="shot"><div class="shot-id"><div><b>12</b><span>1:40–1:50</span></div></div><div><h5>画面</h5><p><strong>平台生成告警</strong>设备状态、时间、级别和对象出现。</p></div><div><h5>机位与动作</h5><p>录屏完整保留告警出现前后；后期克制放大关键节点。</p></div><div><h5>现场要求</h5><p>使用可复现的演示告警；不得为拍摄影响真实设备运行。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>13</b><span>1:50–2:00</span></div></div><div><h5>画面</h5><p><strong>任务派发与接收</strong>平台转任务，责任人移动端收到信息。</p></div><div><h5>机位与动作</h5><p>录屏、手机特写和人物反应三条；手机亮度与字体提前调整。</p></div><div><h5>现场要求</h5><p>姓名、手机号和设备编号使用演示信息；通知弹窗全部关闭。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>14</b><span>2:00–2:12</span></div></div><div><h5>画面</h5><p><strong>现场核查</strong>到场、看仪表、核对参数、检查设备和记录。</p></div><div><h5>机位与动作</h5><p>稳定器跟随到场；固定中景拍完整处置；细节补仪表和手部。</p></div><div><h5>现场要求</h5><p>先由现场负责人确认安全动作；不演示未经授权的维修操作。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>15</b><span>2:12–2:22</span></div></div><div><h5>画面</h5><p><strong>回填与复核</strong>处理结果录入，任务状态更新并形成时间线。</p></div><div><h5>机位与动作</h5><p>录屏完整保留提交前后；人物操作与屏幕结果匹配剪辑。</p></div><div><h5>现场要求</h5><p>工单字段和闭环状态必须与当前实际流程一致。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>16</b><span>2:22–2:34</span></div></div><div><h5>画面</h5><p><strong>趋势与分析参考</strong>历史状态、异常线索或建议条目。</p></div><div><h5>机位与动作</h5><p>界面停留足够阅读；后期只做分层标注，不制作虚构功能。</p></div><div><h5>现场要求</h5><p>若智能分析未正式上线，则改拍普通趋势分析或删除本镜。</p></div></article>
-
-      <p class="group-title">D｜真实使用、持续保障与品牌收口</p>
-      <article class="shot"><div class="shot-id"><div><b>17</b><span>2:34–2:45</span></div></div><div><h5>画面</h5><p><strong>院方人员实际使用</strong>控制中心或办公室查看平台并交流。</p></div><div><h5>机位与动作</h5><p>侧后方人物与屏幕同框；补一次指向屏幕的真实讨论动作。</p></div><div><h5>现场要求</h5><p>人物出镜授权明确；不要求背台词，可录一句自然使用感受备用。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>18</b><span>2:45–2:51</span></div></div><div><h5>画面</h5><p><strong>机房平稳运行</strong>设备、管路、巡检人员经过，与开头呼应。</p></div><div><h5>机位与动作</h5><p>三脚架或稳定器低速横移；保留设备原声。</p></div><div><h5>现场要求</h5><p>拍摄真实运行状态，不人为切换设备或改变参数。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>19</b><span>2:51–2:57</span></div></div><div><h5>画面</h5><p><strong>医院与平台交叉收束</strong>外景、总览、人员动作三者呼应。</p></div><div><h5>机位与动作</h5><p>从已有素材选择，不另做空泛科技转场；关键词不超过三个。</p></div><div><h5>现场要求</h5><p>价值表述只使用双方确认的中性词，不出现未核验数字。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>20</b><span>2:57–3:00</span></div></div><div><h5>画面</h5><p><strong>项目名称与双方品牌</strong>静态结束画面。</p></div><div><h5>机位与动作</h5><p>片尾至少停留 3 秒；提供无二维码和可替换信息版本。</p></div><div><h5>现场要求</h5><p>项目名、Logo、排序、联系方式和使用授权统一确认。</p></div></article>
-    </section>
-
-    <section id="execute">
-      <div class="section-head">
-        <h2><span>三</span>怎么拍</h2>
-        <p>正式拍摄前安排一次 45 分钟勘景和一次 60 分钟平台演练。没有勘景和演练，不直接进入拍摄日。</p>
-      </div>
+      <h3>确认之后的两周</h3>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>日期</th><th>时间</th><th>场景与任务</th><th>离场前必须带回</th></tr></thead>
+          <thead><tr><th>时间</th><th>动作</th><th>产出</th></tr></thead>
           <tbody>
-            <tr><td rowspan="6">第 1 天<br>医院现场</td><td>07:30–08:00</td><td>入场、安全交底、拍摄路线和不可拍区域复核</td><td>签字版通告、联系人、紧急撤离与设备摆放规则</td></tr>
-            <tr><td>08:00–09:00</td><td>外景、院区标识、公共空间和纯环境声</td><td>外景全景 3 组、空间横移 4 组、环境声 30 到 60 秒</td></tr>
-            <tr><td>09:00–11:30</td><td>机房、设备、巡检、看表与记录</td><td>设备全、中、近景；巡检完整动作；仪表和手部特写</td></tr>
-            <tr><td>11:30–12:00</td><td>现场快速回看与第一次双备份</td><td>确认镜头 01–05、18 无缺失，无隐私与技术问题</td></tr>
-            <tr><td>13:30–15:00</td><td>控制中心、院方人员操作和真实协作</td><td>人物与平台同框；查看、讨论、确认的完整动作</td></tr>
-            <tr><td>15:00–17:00</td><td>告警到现场处置模拟、补拍与最终验收</td><td>告警、接收、到场、核查、回填、复核六段完整链条</td></tr>
-            <tr><td rowspan="5">第 2 天<br>公司与录屏</td><td>09:00–10:30</td><td>会议、白板、需求梳理与团队协作</td><td>镜头 06–08 的中景、手部、资料和状态变化</td></tr>
-            <tr><td>10:30–11:30</td><td>平台演示路径最终彩排</td><td>点击顺序、演示数据、功能边界和旁白口径全部确认</td></tr>
-            <tr><td>13:00–15:30</td><td>总览、筛选、趋势、告警、派单、回填和分析录屏</td><td>每个操作一条完整录屏、一条备用录屏和关键静帧</td></tr>
-            <tr><td>15:30–16:30</td><td>手机端、越肩操作与界面对应镜头</td><td>界面与人物动作可匹配；屏幕无摩尔纹、反光和敏感信息</td></tr>
-            <tr><td>16:30–17:00</td><td>素材清点、双备份、缺镜复核</td><td>镜号清单签字；两份独立存储；缺镜当场补齐</td></tr>
+            <tr><td>第 1 到 2 天</td><td>发出拍摄通告，锁定勘景与演练时间</td><td>拍摄通告、行程与集合安排</td></tr>
+            <tr><td>第 3 到 4 天</td><td>完成现场勘景和平台演练</td><td>勘景记录、演练录屏样片</td></tr>
+            <tr><td>第 5 天</td><td>按勘景结论定拍摄日、机位、人员和器材清单</td><td>分镜确认版、器材清单</td></tr>
+            <tr><td>第 6 到 7 天</td><td>拍摄日 1（医院）与拍摄日 2（公司与录屏）</td><td>原始素材、当日素材清单</td></tr>
+            <tr><td>第 8 天起</td><td>素材整理与粗剪</td><td>粗剪版，进入第一次审片</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="two">
-        <div class="panel">
-          <h4>谁负责什么</h4>
-          <ul>
-            <li><b>总负责人</b>：确认目标、日程与最终取舍。</li>
-            <li><b>院方协调</b>：负责区域、人员、安全和隐私边界。</li>
-            <li><b>技术审核</b>：确认平台功能、数据与操作流程。</li>
-            <li><b>演示人员</b>：按固定路径完成录屏和现场操作。</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h4>一套够用的器材</h4>
-          <ul>
-            <li>可稳定拍摄 4K 的相机或手机，另有备用机位更好。</li>
-            <li>三脚架、小型稳定器、两盏 LED 补光灯。</li>
-            <li>无线领夹麦加指向麦或录音机，监听耳机必带。</li>
-            <li>偏振镜可用于屏幕反光，显示器内容仍要单独录屏。</li>
-            <li>两块独立存储介质、读卡器、移动电源和延长线。</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel" style="margin-top:26px">
-        <h4>开机前统一一次参数</h4>
-        <ul>
-          <li>医院 50Hz 照明建议用 25fps、1/50 快门；若用 30fps，则整个项目统一。</li>
-          <li>4K 采集；同一场景锁定白平衡、曝光和色彩模式。</li>
-          <li>普通动作不随意升格，确需慢动作时用 50fps 并记录。</li>
-          <li>每条有效镜头头尾各保留 5 到 10 秒，至少拍两遍。</li>
-          <li>每个场景录 30 到 60 秒纯环境声，拍完立即监听复核。</li>
-        </ul>
-      </div>
+
+      <h3>拍摄通告要写清楚的事</h3>
+      <ul>
+        <li>集合时间与地点、当天起止时间、联系方式</li>
+        <li>当天可进入区域与不可拍区域，标注在平面图上</li>
+        <li>院方陪同人与现场安全交底安排</li>
+        <li>出镜人员名单与肖像授权确认状态</li>
+        <li>统一工装穿着要求，注明当天需穿中金能源标识工装的人员</li>
+        <li>避免大面积高饱和颜色入镜，机房内按院方规定着装</li>
+      </ul>
     </section>
 
-    <section id="standard">
+    <section id="gear">
       <div class="section-head">
-        <h2><span>四</span>现场规矩</h2>
-        <p>标准只有一条：素材回来就能直接进粗剪，不需要重新解释画面含义，也不存在合规风险。</p>
+        <h2><span>三</span>设备准备与品牌露出</h2>
+        <p>器材按一套够用的标准准备，不为一次拍摄堆设备。品牌露出靠真实工装和现场标识自然带出，不靠后期贴图。</p>
       </div>
-      <div class="two">
-        <div class="panel">
-          <h4>医院现场四条硬线</h4>
-          <ul>
-            <li>不出现患者正脸、病历、床号、身份证件和通话记录。</li>
-            <li>不出现生产环境账号、真实手机号、内部通讯录。</li>
-            <li>屏幕和纸质文件由院方先行确认，或使用脱敏样例。</li>
-            <li>有疑问的镜头当场标记隔离，不进入粗剪素材库。</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h4>界面必须单独录一份</h4>
-          <ul>
-            <li>用演示账号和脱敏数据，关闭通知、聊天和自动填充。</li>
-            <li>1920×1080 以上原始录屏，不以拍摄显示器代替。</li>
-            <li>每条操作留一条完整录屏、一条备用录屏和三张关键静帧。</li>
-            <li>录屏界面必须与片中旁白描述一致，不能临时改功能。</li>
-          </ul>
-        </div>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>类别</th><th>具体要求</th><th>数量</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>主机位</td><td>可稳定拍摄 4K 的相机或手机</td><td>1 台 + 备用 1 台</td><td>备用机位用于并发补拍，避免停机等待</td></tr>
+            <tr><td>稳定</td><td>三脚架、小型稳定器</td><td>各 1</td><td>机房优先稳定机位，不做大幅快速运动</td></tr>
+            <tr><td>收音</td><td>无线领夹麦、指向麦或录音机、监听耳机</td><td>领夹麦 2 套</td><td>机房噪声大，收音比新镜头更重要</td></tr>
+            <tr><td>灯光</td><td>小型 LED 补光灯</td><td>2 盏</td><td>避免影响医院正常运行或设备操作</td></tr>
+            <tr><td>屏幕</td><td>偏振镜</td><td>1 片</td><td>拍摄显示器时减少反光</td></tr>
+            <tr><td>存储</td><td>高速存储卡、读卡器、移动硬盘</td><td>卡 2 套、硬盘 2 块</td><td>两份独立介质，当天完成双备份</td></tr>
+            <tr><td>供电</td><td>移动电源、延长线、备用电池</td><td>按机位数量配</td><td>机房取电不便，避免中途停机</td></tr>
+            <tr><td>工装</td><td>深色工作服，胸前印制中金能源 logo</td><td>按出场人数 + 2 套</td><td>VI 确认后由品牌统一提供，拍摄前一天到位</td></tr>
+            <tr><td>品牌物料</td><td>门牌、笔记本、工作证套、设备贴纸</td><td>按需</td><td>只在 1 到 2 个镜头自然出现，不集中摆放</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="two" style="margin-top:26px">
-        <div class="panel">
-          <h4>当天完成双备份与登记</h4>
-          <ul>
-            <li>卡内原始素材在两份备份验证前不格式化。</li>
-            <li>工作盘与备份盘使用同一目录和文件名，不写“最终版2”。</li>
-            <li>每日生成素材清单：镜号、文件名、是否可用、隐私状态和备注。</li>
-            <li>录屏、相机、手机和录音文件分目录，后期入库时统一时间。</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h4>现场出问题时的三个动作</h4>
-          <ol>
-            <li>设备或场地出问题：先保闭环动作、设备细节和真实操作，其余降级处理。</li>
-            <li>平台临时不稳定：立即改拍人物操作与现场细节，界面用已确认的录屏替换。</li>
-            <li>院方临时调整区域或人员：按新清单执行，并在素材清单中标注变更来源。</li>
-          </ol>
-        </div>
-      </div>
+
+      <h3>中金能源 logo 怎么露出</h3>
+      <ul>
+        <li>由人带出来：我方工程师统一穿中金能源标识工装出场，出现在会议、机房讲解、现场处置和控制中心四个场景。</li>
+        <li>由物带出来：门牌、设备贴纸、笔记本封面在工程师自然接触的画面里出现，不做集中摆放的“logo 墙”。</li>
+        <li>由片尾收口：项目名称、双方 Logo 并列，双方顺序按启动会确认的结果排。</li>
+        <li>标识以 VI 提供的正式版本为准，不自行拉伸、改色或叠加其他图形。</li>
+      </ul>
+
+      <h3>露出时的三条边界</h3>
+      <ul>
+        <li>工装上的标识不遮挡安全标识、门牌和工牌信息，也不遮挡设备警示标签。</li>
+        <li>中金能源标识与院方标识同时入镜时保持各自清晰，不让观众误以为院方即我方。</li>
+        <li>拍摄人员未经许可不拍摄院方标识、院方车辆和院内文件。</li>
+      </ul>
+
+      <h3>开机前统一一次参数</h3>
+      <ul>
+        <li>帧率：医院 50Hz 照明建议 25fps、1/50 快门；若用 30fps，整个项目统一，不混用。</li>
+        <li>采集：4K 采集，同一场景锁定白平衡、曝光和色彩模式。</li>
+        <li>升格：普通动作不随意升格，确需慢动作时用 50fps 并记录。</li>
+        <li>余量：每条有效镜头头尾各保留 5 到 10 秒，至少拍两遍。</li>
+        <li>声音：每个场景录 30 到 60 秒纯环境声，拍完立即监听复核。</li>
+        <li>工装：涉及我方人员的镜头先拍一条全身，确认标识完整、干净、无遮挡再继续。</li>
+      </ul>
+
+      <h3>存储与备份规则</h3>
+      <ul>
+        <li>卡内原始素材在两份备份验证完成前不格式化。</li>
+        <li>工作盘与备份盘使用同一目录和文件名，不写“最终版2”这类命名。</li>
+        <li>每日生成素材清单：镜号、文件名、是否可用、隐私状态和备注。</li>
+        <li>录屏、相机、手机和录音文件分目录，后期入库时统一时间。</li>
+      </ul>
+
+      <h3>医院现场四条硬线</h3>
+      <ul>
+        <li>不出现患者正脸、病历、床号、身份证件和通话记录。</li>
+        <li>不出现生产环境账号、真实手机号、内部通讯录。</li>
+        <li>屏幕和纸质文件由院方先行确认，或使用脱敏样例。</li>
+        <li>有疑问的镜头当场标记隔离，不进入粗剪素材库。</li>
+      </ul>
+
       <h3>文件命名</h3>
       <pre class="code">RJ_D1_S03_A_TK01.mp4    # 第1天 / 镜头03 / A机 / 第1条
 RJ_D1_S14_B_TK02.mp4    # 现场处置 / B机 / 第2条
@@ -444,7 +406,8 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
         <li><input type="checkbox" data-check="people"><span>出镜人员、平台演示人员和技术审核人已确认。</span></li>
         <li><input type="checkbox" data-check="account"><span>演示账号、脱敏数据和完整操作路径已彩排。</span></li>
         <li><input type="checkbox" data-check="features"><span>可展示功能、“已投入使用”范围和禁用表述已形成清单。</span></li>
-        <li><input type="checkbox" data-check="brand"><span>Logo、字体、标准色、音乐方向与授权范围已准备。</span></li>
+        <li><input type="checkbox" data-check="brand"><span>Logo、标准色、工装、音乐方向与授权范围已准备。</span></li>
+        <li><input type="checkbox" data-check="uniform"><span>中金能源标识工装已到位，尺码、数量和出场人员核对完成。</span></li>
         <li><input type="checkbox" data-check="notice"><span>手机和电脑通知、聊天、自动填充及敏感历史记录已关闭。</span></li>
         <li><input type="checkbox" data-check="call"><span>拍摄通告已发到所有参与人，并明确集合与结束时间。</span></li>
       </ul>
@@ -455,6 +418,7 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
         <li><input type="checkbox" data-check="loop"><span>告警、派单、到场、处置、回填、复核链条完整。</span></li>
         <li><input type="checkbox" data-check="screen"><span>关键界面有原始录屏，画面可读且无光标乱动。</span></li>
         <li><input type="checkbox" data-check="privacy"><span>无患者信息、真实账号、手机号、密钥和未授权正脸。</span></li>
+        <li><input type="checkbox" data-check="brandshot"><span>中金能源标识镜头完整，工装标识未被遮挡、无变形。</span></li>
         <li><input type="checkbox" data-check="technical"><span>无频闪、严重反光、虚焦、爆音、过曝和错误白平衡。</span></li>
         <li><input type="checkbox" data-check="ambient"><span>每个主要场景均录制 30 到 60 秒纯环境声。</span></li>
         <li><input type="checkbox" data-check="backup"><span>素材已复制到两份独立介质，并随机打开文件验证。</span></li>
@@ -462,9 +426,76 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
       </ul>
     </section>
 
+    <section id="script">
+      <div class="section-head">
+        <h2><span>四</span>脚本与旁白</h2>
+        <p>先定叙事，再定镜头，最后定旁白。这里的旁白是拍摄依据，不是最终对外文案。</p>
+      </div>
+      <h3>三分钟的骨架</h3>
+      <ul>
+        <li>0:00–0:45　医院持续运行与管理挑战</li>
+        <li>0:45–1:08　院方与中金能源技术团队共同梳理业务、设备和数据</li>
+        <li>1:08–1:40　平台总览、多维分析与异常发现</li>
+        <li>1:40–2:34　告警、派单、现场处置、结果回填形成闭环</li>
+        <li>2:34–3:00　院方与中金能源工程师真实使用，品牌收口</li>
+      </ul>
+
+      <h3>旁白工作稿</h3>
+      <div class="panel">
+        <div class="voice"><time>0:00–0:22</time><p>一座医院每一天的高效运转，离不开看不见的能源与后勤保障。从供配电、空调到给排水，每一套系统、每一台设备，都关系着医疗服务的安全与连续。</p></div>
+        <div class="voice"><time>0:22–0:45</time><p>随着院区规模和设备数量不断增加，人工巡检、分散记录以及多套系统之间的来回切换，让信息难以及时汇总，也增加了发现异常、追踪问题和协同处置的难度。</p></div>
+        <div class="voice"><time>0:45–1:08</time><p>围绕项目的实际管理需求，院方与中金能源技术团队共同梳理业务流程、设备体系和管理重点，推进能源与后勤管理平台建设。通过统一接入相关设备和系统数据，逐步形成覆盖采集、分析、告警和处置的管理基础。</p></div>
+        <div class="voice"><time>1:08–1:40</time><p>在统一平台上，管理人员可以集中查看能源使用和设备运行情况，并按已具备的管理维度进行分析。趋势、对比和关键状态被放在同一条信息链中，帮助管理人员更及时地掌握变化、发现异常。</p></div>
+        <div class="voice"><time>1:40–2:12</time><p>当设备状态偏离正常范围，系统可以按照已配置的流程生成告警和任务。责任人员接收信息、到达现场、核对设备、反馈处理结果，工单状态随之更新，让问题从发现、派发到处置和复核形成闭环。</p></div>
+        <div class="voice"><time>2:12–2:34</time><p>在真实运行数据持续积累的基础上，分析能力可以结合历史趋势和设备状态，辅助识别异常线索，为运行调整、维护安排和后续分析提供参考。它不替代人员判断，而是为判断提供更完整的数据依据。</p></div>
+        <div class="voice"><time>2:34–2:51</time><p>平台当前已投入使用的范围和场景须由项目团队确认。经确认后，可说明其如何为后勤管理提供实时、直观的运行支撑，并推动信息统一呈现、过程留痕和协同处置。</p></div>
+        <div class="voice"><time>2:51–3:00</time><p>让能源与后勤管理更安全、更高效、更清晰，为医院高质量运行提供持续保障。</p></div>
+      </div>
+
+      <h3>20 个镜头</h3>
+      <p>每个动作至少拍完整一遍，再补全景、中景和细节。现场离开前按镜号核对，不依赖后期想办法。C 组为闭环镜头，不可补拍，优先级最高。带中金能源标识的镜头已在下表标出。</p>
+
+      <p class="group-title">A｜医院持续运行与管理挑战</p>
+      <article class="shot"><div class="shot-id"><div><b>01</b><span>0:00–0:08</span></div></div><div><h5>画面</h5><p><strong>医院外景与院区标识</strong>清晨或傍晚建筑全景、入口与环境。</p></div><div><h5>机位与动作</h5><p>三脚架静态加稳定器慢推各一条；每条保留 10 秒头尾。</p></div><div><h5>现场要求</h5><p>避开车牌和可识别患者；单录 30 秒环境声。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>02</b><span>0:08–0:15</span></div></div><div><h5>画面</h5><p><strong>公共空间正常运行</strong>大厅、走廊或后勤通道的秩序感。</p></div><div><h5>机位与动作</h5><p>广角固定或低速横移；人物只作环境尺度，不追拍正脸。</p></div><div><h5>现场要求</h5><p>院方先确认可拍区域；发现病历、屏幕或患者正脸立即停机。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>03</b><span>0:15–0:22</span></div></div><div><h5>画面</h5><p><strong>机房与关键设备</strong>配电、冷机、水泵、管路、仪表。<span class="brand-mark">含中金能源工程师随行讲解全身镜头。</span></p></div><div><h5>机位与动作</h5><p>全景交代空间，中景呈现系统，特写拍运行细节；讲解员先走一条全身确认标识完整。</p></div><div><h5>现场要求</h5><p>佩戴防护用品；工装标识不遮挡安全标识；不摆拍危险动作。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>04</b><span>0:22–0:32</span></div></div><div><h5>画面</h5><p><strong>传统巡检与记录</strong>走近设备、看表、核对、手写或移动记录。</p></div><div><h5>机位与动作</h5><p>先完整动作，再拍手部、仪表和记录特写；每个动作两遍。</p></div><div><h5>现场要求</h5><p>记录内容使用脱敏样例；动作由真实岗位人员确认。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>05</b><span>0:32–0:45</span></div></div><div><h5>画面</h5><p><strong>信息分散</strong>多个窗口、表格或纸质记录之间切换。</p></div><div><h5>机位与动作</h5><p>越肩实拍人物操作，同时采集一份干净的屏幕录制。</p></div><div><h5>现场要求</h5><p>使用演示数据；关闭通知、聊天、自动填充和历史记录。</p></div></article>
+
+      <p class="group-title">B｜共同建设与平台总览</p>
+      <article class="shot"><div class="shot-id"><div><b>06</b><span>0:45–0:54</span></div></div><div><h5>画面</h5><p><strong>院方与中金能源技术团队会议</strong>平面图、流程资料和业务讨论。<span class="brand-mark">中金能源工程师主讲，白板上使用我方标识。</span></p></div><div><h5>机位与动作</h5><p>侧面双人中景、手部和资料特写；开场给一条我方工程师中景，标识清晰可见。</p></div><div><h5>现场要求</h5><p>桌面文件提前脱敏；安排真实参与人员，不使用夸张表演。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>07</b><span>0:54–1:01</span></div></div><div><h5>画面</h5><p><strong>白板梳理关系</strong>设备、数据、告警和处置路径。</p></div><div><h5>机位与动作</h5><p>正面白板加侧后方人物；写下三到五个真实节点即可。</p></div><div><h5>现场要求</h5><p>拍前由技术人员确认关系，不出现客户敏感结构和接口地址。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>08</b><span>1:01–1:08</span></div></div><div><h5>画面</h5><p><strong>测试与接入</strong>演示环境状态从待确认到正常。<span class="brand-mark">中金能源研发人员操作演示环境。</span></p></div><div><h5>机位与动作</h5><p>研发操作中景加状态变化录屏；镜头停留至少 4 秒。</p></div><div><h5>现场要求</h5><p>不得展示密码、密钥、真实 IP、敏感代码和生产环境地址。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>09</b><span>1:08–1:20</span></div></div><div><h5>画面</h5><p><strong>平台总览</strong>进入项目主页，呈现设备和运行状态。</p></div><div><h5>机位与动作</h5><p>录屏为主；人物越肩操作作证据，后期采用缓慢推近。</p></div><div><h5>现场要求</h5><p>录屏 1920×1080 以上；光标路径提前排练，不来回寻找。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>10</b><span>1:20–1:31</span></div></div><div><h5>画面</h5><p><strong>管理维度切换</strong>只演示一个筛选动作和一个结果。</p></div><div><h5>机位与动作</h5><p>完整录制点击前后状态；后期只放大关键区域。</p></div><div><h5>现场要求</h5><p>区域、楼宇或科室等维度必须是当前已具备功能。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>11</b><span>1:31–1:40</span></div></div><div><h5>画面</h5><p><strong>趋势与异常点</strong>历史曲线、对比和一个可解释的变化。</p></div><div><h5>机位与动作</h5><p>录屏停留 6 到 8 秒；后期用标注圈出异常点，不重画假曲线。</p></div><div><h5>现场要求</h5><p>不展示未经核验的节能率、费用节余或效果数字。</p></div></article>
+
+      <p class="group-title">C｜告警、任务与现场处置闭环（不可补拍，优先级最高）</p>
+      <article class="shot"><div class="shot-id"><div><b>12</b><span>1:40–1:50</span></div></div><div><h5>画面</h5><p><strong>平台生成告警</strong>设备状态、时间、级别和对象出现。</p></div><div><h5>机位与动作</h5><p>录屏完整保留告警出现前后；后期克制放大关键节点。</p></div><div><h5>现场要求</h5><p>使用可复现的演示告警；不得为拍摄影响真实设备运行。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>13</b><span>1:50–2:00</span></div></div><div><h5>画面</h5><p><strong>任务派发与接收</strong>平台转任务，责任人移动端收到信息。</p></div><div><h5>机位与动作</h5><p>录屏、手机特写和人物反应三条；手机亮度与字体提前调整。</p></div><div><h5>现场要求</h5><p>姓名、手机号和设备编号使用演示信息；通知弹窗全部关闭。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>14</b><span>2:00–2:12</span></div></div><div><h5>画面</h5><p><strong>现场核查</strong>到场、看仪表、核对参数、检查设备和记录。<span class="brand-mark">中金能源驻场工程师处置，工装标识完整正面入镜。</span></p></div><div><h5>机位与动作</h5><p>稳定器跟随到场；固定中景拍完整处置；补一条我方工程师正面中景和标识特写。</p></div><div><h5>现场要求</h5><p>先由现场负责人确认安全动作；不演示未经授权的维修操作。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>15</b><span>2:12–2:22</span></div></div><div><h5>画面</h5><p><strong>回填与复核</strong>处理结果录入，任务状态更新并形成时间线。</p></div><div><h5>机位与动作</h5><p>录屏完整保留提交前后；人物操作与屏幕结果匹配剪辑。</p></div><div><h5>现场要求</h5><p>工单字段和闭环状态必须与当前实际流程一致。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>16</b><span>2:22–2:34</span></div></div><div><h5>画面</h5><p><strong>趋势与分析参考</strong>历史状态、异常线索或建议条目。</p></div><div><h5>机位与动作</h5><p>界面停留足够阅读；后期只做分层标注，不制作虚构功能。</p></div><div><h5>现场要求</h5><p>若智能分析未正式上线，则改拍普通趋势分析或删除本镜。</p></div></article>
+
+      <p class="group-title">D｜真实使用、持续保障与品牌收口</p>
+      <article class="shot"><div class="shot-id"><div><b>17</b><span>2:34–2:45</span></div></div><div><h5>画面</h5><p><strong>院方与我方工程师共同使用</strong>控制中心或办公室查看平台并交流。<span class="brand-mark">双方同框，我方工装标识清晰。</span></p></div><div><h5>机位与动作</h5><p>侧后方人物与屏幕同框；补一次指向屏幕的真实讨论动作和一条双方正面中景。</p></div><div><h5>现场要求</h5><p>人物出镜授权明确；不要求背台词，可录一句自然使用感受备用。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>18</b><span>2:45–2:51</span></div></div><div><h5>画面</h5><p><strong>机房平稳运行</strong>设备、管路、巡检人员经过，与开头呼应。<span class="brand-mark">中金能源工程师着工装巡检经过。</span></p></div><div><h5>机位与动作</h5><p>三脚架或稳定器低速横移，工程师从画面中走过；保留设备原声。</p></div><div><h5>现场要求</h5><p>拍摄真实运行状态，不人为切换设备或改变参数。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>19</b><span>2:51–2:57</span></div></div><div><h5>画面</h5><p><strong>医院与平台交叉收束</strong>外景、总览、工程师动作三者呼应。</p></div><div><h5>机位与动作</h5><p>从已有素材选择，不另做空泛科技转场；关键词不超过三个。</p></div><div><h5>现场要求</h5><p>价值表述只使用双方确认的中性词，不出现未核验数字。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>20</b><span>2:57–3:00</span></div></div><div><h5>画面</h5><p><strong>项目名称与双方品牌</strong>静态结束画面。</p></div><div><h5>机位与动作</h5><p>片尾至少停留 3 秒；提供无二维码和可替换信息版本。</p></div><div><h5>现场要求</h5><p>项目名、Logo、排序、联系方式和使用授权统一确认。</p></div></article>
+
+      <h3>配音与声音</h3>
+      <ul>
+        <li>试音：截取 20 到 30 秒核心段落，生成男声与女声各一版，供项目负责人选择。</li>
+        <li>定稿：锁定旁白后再录正式版；项目名、系统名、科室名和英文缩写建立读音表。</li>
+        <li>剪辑：先按正式配音重新锁定镜头，再做字幕和动效钉帧，避免声音被画面牵着走。</li>
+        <li>混音：旁白始终优先，机房环境声只提供空间感，不使用游戏化电子提示音。</li>
+        <li>响度：分别输出网络播放版和大会现场版，最终值根据使用场地测试。</li>
+      </ul>
+    </section>
+
     <section id="post">
       <div class="section-head">
-        <h2><span>五</span>后期与交付</h2>
+        <h2><span>五</span>后期剪辑与效果</h2>
         <p>粗剪确认叙事后再做动画和正式配音。后期不承担修复错误事实、缺失授权和不完整操作路径。</p>
       </div>
       <div class="table-wrap">
@@ -479,26 +510,53 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
           </tbody>
         </table>
       </div>
-      <div class="two">
-        <div class="panel">
-          <h4>最终交付</h4>
-          <ul>
-            <li>约 3 分钟 16:9 主片，带字幕、旁白、配乐和必要音效。</li>
-            <li>主片无配乐版、无字幕底片、旁白干声和 SRT 字幕。</li>
-            <li>90 秒汇报版、30 秒预告版和重新排版的竖屏短版。</li>
-            <li>剪辑与 Remotion 工程、录屏、素材、授权、字体和音乐文件。</li>
-            <li>事实版本、审片意见、最终文件哈希和交付清单。</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h4>主要风险和替代路径</h4>
-          <ul>
-            <li><b>现场权限变化</b>：提前勘景并按优先级分镜头；先保闭环动作和设备细节，外景可另约补拍。</li>
-            <li><b>平台临时不稳定</b>：拍前完整演练并录一份备用屏幕素材；现场只拍人物操作，界面用确认后的录屏替换。</li>
-            <li><b>隐私或数据问题</b>：统一演示账号和脱敏数据，现场设隐私复核人；有疑问的镜头标记隔离，不进入粗剪。</li>
-            <li><b>机房频闪与噪声</b>：勘景时测试快门和收音，人物对白移到安静区域；主要信息由后期旁白承担。</li>
-          </ul>
-        </div>
+
+      <h3>动效做什么、不做什么</h3>
+      <ul>
+        <li>做：在真实录屏上叠加数据流线、告警节点和工单路径，每段 2 到 5 秒。</li>
+        <li>做：用真实设备和现场画面做透明标注、参数跟随和趋势对比。</li>
+        <li>不做：粒子网络、无意义蓝光、连续白镜和独立 logo 墙，这类画面已经在 v38 里出现过。</li>
+        <li>标准：动效必须解释业务或数据关系，做完删掉它，片子信息不能有损失。</li>
+      </ul>
+
+      <h3>品牌在后期怎么处理</h3>
+      <ul>
+        <li>工装、门牌、贴纸上的标识保留原样，不做透视变形或补光修饰。</li>
+        <li>统一色温，避免品牌色被调成偏黄或偏灰，浅色工装在机房里注意过曝。</li>
+        <li>片尾 Logo 使用 VI 提供的矢量文件，按确认顺序排列，留出足够静止停留时间。</li>
+        <li>不做“logo 从画面外飞入”这类片头动画，品牌露出靠真实场景承担。</li>
+      </ul>
+
+      <h3>交付版本</h3>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>版本</th><th>规格</th><th>用途</th></tr></thead>
+          <tbody>
+            <tr><td>3 分钟主片</td><td>16:9，带字幕、旁白、配乐与必要音效</td><td>智慧医院大会、领导汇报、项目展示</td></tr>
+            <tr><td>主片无配乐版</td><td>保留旁白、字幕和必要音效</td><td>现场重新配乐或后续二次编辑</td></tr>
+            <tr><td>90 秒汇报版</td><td>保留运行、平台、闭环和价值</td><td>客户拜访、会议暖场、官网</td></tr>
+            <tr><td>30 秒预告版</td><td>问题、平台能力、真实使用、项目收口</td><td>会前预热和社交媒体</td></tr>
+            <tr><td>竖屏短版</td><td>重新排版，不直接裁切横版</td><td>视频号、抖音和内部传播</td></tr>
+            <tr><td>工程与素材包</td><td>剪辑与 Remotion 工程、录屏、素材、授权、字幕、配音和版本记录</td><td>后续改字、改数据和衍生版本</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>验收标准</h3>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>类别</th><th>必须通过</th></tr></thead>
+          <tbody>
+            <tr><td>事实</td><td>项目名、功能状态、院方名称、数据、成效、读音和时间范围均有确认记录。</td></tr>
+            <tr><td>品牌</td><td>中金能源标识露出完整、清晰、无变形，片尾双方顺序与确认一致。</td></tr>
+            <tr><td>隐私</td><td>无患者信息、真实账号、电话号码、密钥、敏感代码和未授权正脸。</td></tr>
+            <tr><td>画面</td><td>无黑帧、卡顿、过曝、错误裁切；关键界面停留足够，字幕可读。</td></tr>
+            <tr><td>声音</td><td>旁白清晰、读音正确、音乐不压人声、无爆音和突兀剪切。</td></tr>
+            <tr><td>工程</td><td>时间线、文案、设计与素材清单一致，重新渲染结果可复现。</td></tr>
+            <tr><td>文件</td><td>名称、时长、分辨率、帧率、编码、音轨和哈希记录完整。</td></tr>
+            <tr><td>授权</td><td>Logo、字体、音乐、标识物料、人员、场地、平台画面和开源项目许可已核对。</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -515,7 +573,7 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
             <li>5 到 15 分钟：项目名称与功能口径，正式片名、院区、可展示功能、禁用表述。</li>
             <li>15 到 25 分钟：拍摄权限与院方安排，日期、区域、陪同人、出镜人员、授权范围。</li>
             <li>25 到 35 分钟：平台演示准备，演示账号、脱敏数据、一条完整操作路径、回避清单。</li>
-            <li>35 到 45 分钟：品牌、授权与公开口径，Logo、字体、配乐方向、哪些内容可以公开。</li>
+            <li>35 到 45 分钟：品牌与工装，Logo、标准色、中金能源标识工装数量与出场人员。</li>
             <li>45 到 55 分钟：审片机制与时间表，唯一终审人、每轮截止时间、勘景和拍摄日期。</li>
             <li>55 到 60 分钟：逐条复述结论、明确责任人和交付时间，签字后散会。</li>
           </ul>
@@ -525,11 +583,11 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
           <ul>
             <li>第 1 到 2 天：发出拍摄通告，锁定勘景与演练时间。</li>
             <li>第 3 到 4 天：完成 45 分钟现场勘景和 60 分钟平台演练，形成勘景记录。</li>
-            <li>第 5 天：按勘景结论定拍摄日、机位、人员和器材清单。</li>
+            <li>第 5 天：按勘景结论定拍摄日、机位、人员和器材清单，标识工装到位。</li>
             <li>第 6 到 7 天：拍摄日 1（医院）与拍摄日 2（公司与录屏），每天离场前完成检查单。</li>
             <li>第 8 天起：素材整理与粗剪，粗剪完成后进入第一次审片。</li>
           </ul>
-          <p style="margin-top:16px">这三件事不解决，片子就不能对外使用：正式项目名称、具体院区与片尾署名；平台功能上线状态、“已投入使用”的适用范围和可公开数据；唯一终审人、每轮修改次数与发布渠道。</p>
+          <p style="margin-top:16px">这三件事不解决，片子不能对外使用：正式项目名称、具体院区与片尾署名；平台功能上线状态、“已投入使用”的适用范围和可公开数据；唯一终审人、每轮修改次数与发布渠道。</p>
         </div>
       </div>
     </section>
@@ -538,7 +596,7 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
   </main>
 
   <script>
-    const key = 'renji-shooting-checks-v3';
+    const key = 'renji-shooting-checks-v4';
     const checks = [...document.querySelectorAll('[data-check]')];
     const saved = JSON.parse(localStorage.getItem(key) || '{}');
     checks.forEach((item) => {
