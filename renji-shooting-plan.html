@@ -377,12 +377,7 @@
       </ul>
 
       <h3>存储与备份规则</h3>
-      <ul>
-        <li>卡内原始素材在两份备份验证完成前不格式化。</li>
-        <li>工作盘与备份盘使用同一目录和文件名，不写“最终版2”这类命名。</li>
-        <li>每日生成素材清单：镜号、文件名、是否可用、隐私状态和备注。</li>
-        <li>录屏、相机、手机和录音文件分目录，后期入库时统一时间。</li>
-      </ul>
+      <p>素材当天做两份独立备份并随机打开验证，原始文件在备份确认前不格式化；录屏、相机和录音文件分目录统一命名，后期按镜号入库，避免素材对不上镜头。</p>
 
       <h3>医院现场四条硬线</h3>
       <ul>
@@ -390,39 +385,6 @@
         <li>不出现生产环境账号、真实手机号、内部通讯录。</li>
         <li>屏幕和纸质文件由院方先行确认，或使用脱敏样例。</li>
         <li>有疑问的镜头当场标记隔离，不进入粗剪素材库。</li>
-      </ul>
-
-      <h3>文件命名</h3>
-      <pre class="code">RJ_D1_S03_A_TK01.mp4    # 第1天 / 镜头03 / A机 / 第1条
-RJ_D1_S14_B_TK02.mp4    # 现场处置 / B机 / 第2条
-RJ_UI_09_Overview_01.mp4
-RJ_UI_12_Alert_01.mp4
-RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
-
-      <h3>开拍前检查</h3>
-      <ul class="checklist">
-        <li><input type="checkbox" data-check="name"><span>正式项目名、院区和片尾名称排序已确认。</span></li>
-        <li><input type="checkbox" data-check="permit"><span>拍摄许可、路线、联系人、不可拍区域和安全要求已确认。</span></li>
-        <li><input type="checkbox" data-check="people"><span>出镜人员、平台演示人员和技术审核人已确认。</span></li>
-        <li><input type="checkbox" data-check="account"><span>演示账号、脱敏数据和完整操作路径已彩排。</span></li>
-        <li><input type="checkbox" data-check="features"><span>可展示功能、“已投入使用”范围和禁用表述已形成清单。</span></li>
-        <li><input type="checkbox" data-check="brand"><span>Logo、标准色、工装、音乐方向与授权范围已准备。</span></li>
-        <li><input type="checkbox" data-check="uniform"><span>中金能源标识工装已到位，尺码、数量和出场人员核对完成。</span></li>
-        <li><input type="checkbox" data-check="notice"><span>手机和电脑通知、聊天、自动填充及敏感历史记录已关闭。</span></li>
-        <li><input type="checkbox" data-check="call"><span>拍摄通告已发到所有参与人，并明确集合与结束时间。</span></li>
-      </ul>
-
-      <h3>离场前检查</h3>
-      <ul class="checklist">
-        <li><input type="checkbox" data-check="shots"><span>当日镜号逐项核对，关键动作均有全景、中景和细节。</span></li>
-        <li><input type="checkbox" data-check="loop"><span>告警、派单、到场、处置、回填、复核链条完整。</span></li>
-        <li><input type="checkbox" data-check="screen"><span>关键界面有原始录屏，画面可读且无光标乱动。</span></li>
-        <li><input type="checkbox" data-check="privacy"><span>无患者信息、真实账号、手机号、密钥和未授权正脸。</span></li>
-        <li><input type="checkbox" data-check="brandshot"><span>中金能源标识镜头完整，工装标识未被遮挡、无变形。</span></li>
-        <li><input type="checkbox" data-check="technical"><span>无频闪、严重反光、虚焦、爆音、过曝和错误白平衡。</span></li>
-        <li><input type="checkbox" data-check="ambient"><span>每个主要场景均录制 30 到 60 秒纯环境声。</span></li>
-        <li><input type="checkbox" data-check="backup"><span>素材已复制到两份独立介质，并随机打开文件验证。</span></li>
-        <li><input type="checkbox" data-check="missing"><span>缺镜与重拍项已在离场前确认并补齐。</span></li>
       </ul>
     </section>
 
@@ -595,16 +557,5 @@ RJ_AUDIO_RoomTone_ColdPlant.wav</pre>
     <p class="closing">仁济项目宣传片拍摄方案 · 2026 年 11 月 10 日 · 项目事实与公开口径以启动会确认记录为准</p>
   </main>
 
-  <script>
-    const key = 'renji-shooting-checks-v4';
-    const checks = [...document.querySelectorAll('[data-check]')];
-    const saved = JSON.parse(localStorage.getItem(key) || '{}');
-    checks.forEach((item) => {
-      item.checked = Boolean(saved[item.dataset.check]);
-      item.addEventListener('change', () => {
-        localStorage.setItem(key, JSON.stringify(Object.fromEntries(checks.map((box) => [box.dataset.check, box.checked]))));
-      });
-    });
-  </script>
 </body>
 </html>
