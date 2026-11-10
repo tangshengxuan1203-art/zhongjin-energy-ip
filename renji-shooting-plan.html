@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="仁济医院能源数智化项目宣传片的拍摄方案：结论与决策、汇报口径、前期准备、设备与品牌露出、脚本与旁白、后期剪辑与效果、下一步。">
+  <meta name="description" content="仁济医院能源数智化项目宣传片的拍摄方案：结论与决策、汇报口径、前期准备、设备与品牌露出、脚本与旁白、后期剪辑与效果、技术路线与工具、时间安排。">
   <link rel="icon" href="data:,">
   <title>仁济项目宣传片拍摄方案</title>
   <style>
@@ -40,18 +40,21 @@
       backdrop-filter: blur(12px);
     }
     .bar {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       min-height: 62px;
       margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 8px 0;
     }
     .brand { font-weight: 700; color: var(--muted); font-size: 14px; white-space: nowrap; }
-    nav { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
+    nav { display: flex; gap: 18px; color: var(--muted); font-size: 14px; flex-wrap: wrap; }
     nav a { text-decoration: none; }
     nav a:hover { color: var(--ink); }
+    .actions { display: flex; gap: 8px; align-items: center; }
     .btn {
       padding: 7px 14px;
       border: 1px solid var(--line);
@@ -64,9 +67,18 @@
       white-space: nowrap;
     }
     .btn:hover { border-color: var(--green); color: var(--green); }
-    .actions { display: flex; gap: 8px; }
-    main { width: min(1120px, calc(100% - 40px)); margin: auto; }
-    .hero { padding: 76px 0 8px; max-width: 850px; }
+    .btn.primary { color: #fff; border-color: var(--deep); background: var(--deep); }
+    .btn.primary:hover { color: #fff; background: #245248; }
+    #save-status { color: var(--muted); font-size: 12px; }
+    body.editing [data-edit] {
+      outline: 1px dashed #9fb9b0;
+      outline-offset: 3px;
+      border-radius: 3px;
+      cursor: text;
+    }
+    body.editing [data-edit]:focus { outline: 2px solid var(--green); background: #f4faf7; }
+    main { width: min(1180px, calc(100% - 40px)); margin: auto; }
+    .hero { padding: 70px 0 8px; max-width: 880px; }
     .eyebrow { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .1em; }
     h1 {
       margin: 14px 0 0;
@@ -77,30 +89,30 @@
     }
     .lead { margin: 20px 0 0; color: #414c48; font-size: 18px; }
     .facts {
-      margin: 40px 0 0;
+      margin: 36px 0 0;
       display: grid;
       grid-template-columns: repeat(4,1fr);
       gap: 22px;
-      padding: 22px 0;
+      padding: 20px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
     .facts div { font-size: 14px; color: var(--muted); }
     .facts b { display: block; color: var(--ink); font-size: 19px; font-weight: 700; }
     .note {
-      margin: 26px 0 0;
+      margin: 24px 0 0;
       padding: 14px 18px;
       border-left: 3px solid var(--warn);
       color: #5c4520;
       background: var(--warn-soft);
       font-size: 14.5px;
     }
-    .decide { margin: 34px 0 0; padding: 22px 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+    .decide { margin: 30px 0 0; padding: 22px 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
     .decide h3 { margin: 0 0 12px; font-size: 19px; }
     .decide ol { margin: 0; padding-left: 1.3em; }
     .decide li + li { margin-top: 9px; }
-    section { padding: 62px 0; border-bottom: 1px solid var(--line); }
-    .section-head { margin-bottom: 30px; }
+    section { padding: 60px 0; border-bottom: 1px solid var(--line); }
+    .section-head { margin-bottom: 28px; }
     .section-head h2 {
       margin: 0;
       font-size: clamp(24px,3vw,32px);
@@ -110,7 +122,7 @@
     }
     .section-head h2 span { color: var(--green); margin-right: 12px; font-size: 15px; vertical-align: middle; }
     .section-head p { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
-    h3 { margin: 40px 0 12px; font-size: 19px; font-weight: 700; }
+    h3 { margin: 38px 0 12px; font-size: 19px; font-weight: 700; }
     h3:first-child { margin-top: 0; }
     p { margin: 0 0 14px; }
     ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
@@ -146,26 +158,20 @@
     .shot p { margin: 0; font-size: 13.5px; line-height: 1.7; }
     .shot strong { display: block; margin-bottom: 3px; }
     .shot .brand-mark { color: var(--green); font-weight: 700; }
-    .group-title { margin: 34px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 700; }
-    .checklist { list-style: none; padding: 0; margin: 0; }
-    .checklist li { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
-    .checklist input { width: 17px; height: 17px; margin: 4px 0 0; accent-color: var(--green); flex: 0 0 auto; }
-    .code {
-      margin: 0 0 14px;
-      padding: 16px 18px;
-      overflow: auto;
-      border-radius: 10px;
-      background: #1b2b28;
-      color: #dcebe6;
-      font: 13px/1.85 Consolas, monospace;
-      white-space: pre;
-    }
-    .closing { padding: 56px 0 72px; color: var(--muted); }
-    footer { padding: 24px 20px 40px; color: var(--muted); text-align: center; font-size: 13px; }
+    .group-title { margin: 32px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 700; }
+    .pipe { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-bottom: 22px; }
+    .pipe div { padding: 16px; border-radius: 12px; color: #fff; background: var(--deep); }
+    .pipe b { display: block; color: #b8d8cf; font-size: 12px; }
+    .pipe span { display: block; margin-top: 5px; font-size: 13.5px; }
+    .tool-link { color: var(--green); text-decoration: none; border-bottom: 1px solid #a8c8bd; }
+    .tool-link:hover { border-bottom-color: var(--green); }
+    .closing { padding: 46px 0 60px; color: var(--muted); }
+    .closing a { color: var(--green); }
     @media (max-width: 900px) {
       nav { display: none; }
       .facts { grid-template-columns: repeat(2,1fr); }
       .two { grid-template-columns: 1fr; gap: 22px; }
+      .pipe { grid-template-columns: repeat(2,1fr); }
       .shot { grid-template-columns: 68px 1fr; }
       .shot-id { grid-row: 1 / 4; }
       .shot > div:nth-child(n+3) { grid-column: 2; border-left: 0; border-top: 1px solid var(--line); }
@@ -175,27 +181,26 @@
       body { font-size: 15.5px; }
       .lead { font-size: 16px; }
       .facts { grid-template-columns: 1fr 1fr; gap: 14px; }
-      section { padding: 46px 0; }
+      section { padding: 44px 0; }
       .voice { grid-template-columns: 1fr; gap: 2px; }
       .shot { grid-template-columns: 50px 1fr; }
       .shot > div { padding: 13px; }
       .table-wrap table { min-width: 680px; }
+      #save-status { display: none; }
     }
     @media print {
-      .top, footer { display: none; }
+      .top, .actions, .closing a { display: none; }
       body { background: #fff; font-size: 12pt; }
       main { width: 100%; }
       .hero { padding-top: 0; }
       section { padding: 22px 0; }
       h3 { margin: 22px 0 8px; }
       .two { grid-template-columns: 1fr; gap: 16px; }
-      .panel, .script, .shot, table, .checklist { break-inside: avoid; }
+      .panel, .script, .shot, table { break-inside: avoid; }
       .shot > div { padding: 8px 10px; }
       .shot p { font-size: 10.5pt; }
       .voice { padding: 7px 0; }
-      .code { white-space: pre-wrap; overflow: visible; font-size: 9.5pt; }
       th, td { padding: 7px 9px; font-size: 10.5pt; }
-      input { appearance: none; width: 11px; height: 11px; border: 1px solid #666; }
     }
   </style>
 </head>
@@ -210,11 +215,14 @@
         <a href="#gear">设备与品牌</a>
         <a href="#script">脚本旁白</a>
         <a href="#post">后期效果</a>
-        <a href="#next">下一步</a>
+        <a href="#route">技术路线</a>
+        <a href="#next">时间安排</a>
       </nav>
       <div class="actions">
-        <a class="btn" href="ai-video-methodology.html">返回方法论</a>
-        <button class="btn" type="button" onclick="window.print()">打印</button>
+        <span id="save-status" role="status">已载入方案</span>
+        <button class="btn" type="button" id="edit" aria-pressed="false">编辑内容</button>
+        <button class="btn" type="button" id="download">下载文字版</button>
+        <button class="btn primary" type="button" id="print">打印</button>
       </div>
     </div>
   </header>
@@ -255,11 +263,11 @@
       <div class="script">
         <span class="label">照读</span>
         <p>先说背景。v38 主片技术上已经定版，动效、地图、数据墙都完成了，问题不在画面，在于片子里没有真实的人、真实的机房、真实的一次告警处置。医院和行业客户看完最想知道两件事：项目到底落地没有，平台到底有没有在用。这两件事靠动效说不清楚，只能靠拍。</p>
-        <p>片子分四段证据：医院持续运行，说明能源与后勤保障和医疗连续性的关系；管理挑战，说明人工巡检和分散记录的成本；平台录屏，说明统一接入之后怎么看、怎么发现异常；最后是闭环，从告警生成、派单、人员到现场处置、结果回填，到任务完成，全过程拍完整。这条闭环是整支片子的核心证据，也是最难补拍的部分，所以排在最后一天。</p>
-        <p>拍摄分两天。第一天在医院，上午拍外景、公共空间、机房设备和巡检记录，下午拍控制中心的真实操作和一次完整的异常处置演练。第二天在公司，上午拍会议和白板，下午做平台高清录屏。拍摄前一天先安排一次 45 分钟勘景和一次 60 分钟平台演练，演练不通过就不进拍摄日。所有镜头按镜号命名，当天做两份独立备份，隐私和操作完整性在离场前逐条核对。</p>
+        <p>片子分四段证据：医院持续运行，说明能源与后勤保障和医疗连续性的关系；管理挑战，说明人工巡检和分散记录的成本；平台录屏，说明中金能源自研的数智化能源管理平台统一接入之后怎么看、怎么发现异常；最后是闭环，从告警生成、派单、人员到现场处置、结果回填，到任务完成，全过程拍完整。这条闭环是整支片子的核心证据，也是最难补拍的部分，所以排在最后一天。</p>
+        <p>拍摄分两天。第一天在医院，上午拍外景、公共空间、机房设备和巡检记录，下午拍控制中心的真实操作，以及一次用可复现演示告警走完的异常处置过程。第二天在公司，上午拍会议和白板，下午做平台高清录屏。所有镜头按镜号命名，当天做两份独立备份，隐私和操作完整性在离场前逐条核对。</p>
         <p>这次拍摄会安排我方工程师统一着中金能源工装出场，机房现场、处置动作和会议讨论都会带到人，片尾双方标识并列。这一点是给客户和行业观众看的“是我们的人在现场做事”，不是贴个 logo。</p>
         <p>三条红线：不停机、不改任何设备参数、不进临床和诊疗区域；只用演示环境的脱敏数据，不碰生产账号；不承诺任何未经核验的节能率和费用数字。</p>
-        <p>主片大约 3 分钟，之后从同一条时间线派生 90 秒汇报版、30 秒预告版和竖屏版，一次拍摄多次使用。后期先粗剪、再精剪、再包装，结构锁定之前不做复杂动效。需要支持的是三件事：一次 60 分钟启动会、一次勘景和演练、两天拍摄时间，以及一个唯一的终审人。</p>
+        <p>主片大约 3 分钟，之后从同一条时间线派生 90 秒汇报版、30 秒预告版和竖屏版，一次拍摄多次使用。后期先粗剪、再精剪、再包装，结构锁定之前不做复杂动效。需要支持的是三件事：一次 60 分钟启动会、两天拍摄时间，以及一个唯一的终审人。</p>
       </div>
 
       <h3>常见问题</h3>
@@ -291,34 +299,13 @@
             <tr><td>功能与成效口径</td><td>平台已上线功能；“已投入使用”的适用范围；科室、楼宇分析是否成立；智能分析能否展示</td><td>可展示功能清单、禁用表述清单</td><td>技术审核人</td><td>启动会当天</td></tr>
             <tr><td>拍摄权限与人员</td><td>可进入区域、不可拍区域、拍摄日期、出镜人员、肖像授权、院方陪同人</td><td>拍摄许可 + 授权一页纸</td><td>院方协调人</td><td>启动会后 2 个工作日</td></tr>
             <tr><td>平台演示准备</td><td>演示账号、脱敏数据、一条完整操作路径、需要回避的界面</td><td>彩排通过的录屏样片</td><td>平台演示人员</td><td>拍摄前 3 天</td></tr>
-            <tr><td>品牌与授权</td><td>Logo 源文件、标准色、工装标识、音乐方向、可公开范围</td><td>品牌与授权清单</td><td>品牌传播</td><td>拍摄前 3 天</td></tr>
+            <tr><td>品牌与授权</td><td>Logo 源文件、标准色、工装标识、字体授权、音乐方向、可公开范围</td><td>品牌与授权清单、工装到位确认</td><td>品牌传播</td><td>拍摄前 3 天</td></tr>
             <tr><td>审片机制</td><td>唯一终审人、各审核范围、每轮修改次数与截止时间</td><td>审片流程确认</td><td>项目负责人</td><td>启动会当天</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3>勘景与演练</h3>
-      <ul>
-        <li>现场勘景 45 分钟：确认机房机位、光线、噪声和可进入区域，测试快门与收音，判断哪些镜头能在稳定机位完成。</li>
-        <li>平台演练 60 分钟：按最终旁白顺序完整走一遍操作路径，录一份样片，确认哪些功能可展示、哪些需要回避。</li>
-        <li>演练不通过就不进拍摄日：这是时间成本最低的一道保险，出问题的当天补拍成本远高于演练。</li>
-      </ul>
-
-      <h3>确认之后的两周</h3>
-      <div class="table-wrap">
-        <table class="tight">
-          <thead><tr><th>时间</th><th>动作</th><th>产出</th></tr></thead>
-          <tbody>
-            <tr><td>第 1 到 2 天</td><td>发出拍摄通告，锁定勘景与演练时间</td><td>拍摄通告、行程与集合安排</td></tr>
-            <tr><td>第 3 到 4 天</td><td>完成现场勘景和平台演练</td><td>勘景记录、演练录屏样片</td></tr>
-            <tr><td>第 5 天</td><td>按勘景结论定拍摄日、机位、人员和器材清单</td><td>分镜确认版、器材清单</td></tr>
-            <tr><td>第 6 到 7 天</td><td>拍摄日 1（医院）与拍摄日 2（公司与录屏）</td><td>原始素材、当日素材清单</td></tr>
-            <tr><td>第 8 天起</td><td>素材整理与粗剪</td><td>粗剪版，进入第一次审片</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>拍摄通告要写清楚的事</h3>
+      <h3>拍摄前要准备的通告</h3>
       <ul>
         <li>集合时间与地点、当天起止时间、联系方式</li>
         <li>当天可进入区域与不可拍区域，标注在平面图上</li>
@@ -326,6 +313,36 @@
         <li>出镜人员名单与肖像授权确认状态</li>
         <li>统一工装穿着要求，注明当天需穿中金能源标识工装的人员</li>
         <li>避免大面积高饱和颜色入镜，机房内按院方规定着装</li>
+      </ul>
+
+      <h3>平台演示怎么准备</h3>
+      <ul>
+        <li>按最终旁白顺序完整走一遍操作路径，录一份样片，确认哪些功能可展示、哪些需要回避。</li>
+        <li>演示环境关闭通知、聊天工具和自动填充，画面里不出现真实姓名、手机号、床号或密钥。</li>
+        <li>每个操作留一条完整录屏、一条备用录屏和三张关键静帧，后期直接用录屏，不用拍显示器。</li>
+        <li>用脱敏数据，涉及真实生产环境的部分一律不进片子。</li>
+      </ul>
+
+      <h3>要搜集的素材</h3>
+      <p>拍摄前先把素材来源理清，避免到场才发现某个画面拿不到。下面六类按“必须先拿到、可以当天补、后面再补”分级。</p>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>类别</th><th>具体要收什么</th><th>从哪里来</th><th>谁提供</th><th>优先级</th></tr></thead>
+          <tbody>
+            <tr><td>文字与事实</td><td>旁白终稿、项目名与院区确认件、功能与成效口径、可公开数据清单、术语读音表</td><td>项目与院方书面确认</td><td>项目负责人、技术审核人</td><td>开拍前必须齐</td></tr>
+            <tr><td>品牌与图形</td><td>中金能源 Logo 矢量文件、标准色、字体授权文件、图标、片尾版式、中金能源标识工装</td><td>品牌与 VI</td><td>品牌传播</td><td>开拍前必须齐</td></tr>
+            <tr><td>平台录屏</td><td>总览、管理维度切换、趋势与异常点、告警、任务派发、移动端接收、回填复核、分析参考</td><td>演示环境录屏</td><td>平台演示人员</td><td>开拍前必须齐</td></tr>
+            <tr><td>现场实拍</td><td>外景与院区标识、公共空间、机房与关键设备、巡检与记录、控制中心、告警到复核的六段动作</td><td>拍摄日 1 现场</td><td>院方协调 + 摄影组</td><td>当天拍，不可缺</td></tr>
+            <tr><td>人物</td><td>中金能源工程师主讲与现场处置、院方人员实际使用、双方同框交流</td><td>拍摄日 1 与 2</td><td>双方现场人员</td><td>当天拍，不可缺</td></tr>
+            <tr><td>声音</td><td>机房与公共区域纯环境声、旁白干声与试音、音乐授权、音效</td><td>现场收音 + 后期制作</td><td>摄影组 + 后期</td><td>环境声当天录，其余后期补</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>可以复用的存量素材</h3>
+      <ul>
+        <li>v38 主片的地图、业务框架、数据图形和品牌收口镜头，可直接剪进 90 秒和 30 秒版本，不需要重做。</li>
+        <li>已有的冷站数字人讲解样片，可作为短视频系列的模板，说明真实画面如何嵌入已有动效。</li>
+        <li>品牌物料、授权音乐和字体文件沿用现有版本库，缺的按上表补齐。</li>
       </ul>
     </section>
 
@@ -343,6 +360,7 @@
             <tr><td>收音</td><td>无线领夹麦、指向麦或录音机、监听耳机</td><td>领夹麦 2 套</td><td>机房噪声大，收音比新镜头更重要</td></tr>
             <tr><td>灯光</td><td>小型 LED 补光灯</td><td>2 盏</td><td>避免影响医院正常运行或设备操作</td></tr>
             <tr><td>屏幕</td><td>偏振镜</td><td>1 片</td><td>拍摄显示器时减少反光</td></tr>
+            <tr><td>录屏</td><td>录屏软件或采集卡，输出 1920×1080</td><td>1 套</td><td>界面一律单独录，不拍显示器代替</td></tr>
             <tr><td>存储</td><td>高速存储卡、读卡器、移动硬盘</td><td>卡 2 套、硬盘 2 块</td><td>两份独立介质，当天完成双备份</td></tr>
             <tr><td>供电</td><td>移动电源、延长线、备用电池</td><td>按机位数量配</td><td>机房取电不便，避免中途停机</td></tr>
             <tr><td>工装</td><td>深色工作服，胸前印制中金能源 logo</td><td>按出场人数 + 2 套</td><td>VI 确认后由品牌统一提供，拍摄前一天到位</td></tr>
@@ -354,9 +372,9 @@
       <h3>中金能源 logo 怎么露出</h3>
       <ul>
         <li>由人带出来：我方工程师统一穿中金能源标识工装出场，出现在会议、机房讲解、现场处置和控制中心四个场景。</li>
-        <li>由物带出来：门牌、设备贴纸、笔记本封面在工程师自然接触的画面里出现，不做集中摆放的“logo 墙”。</li>
+        <li>由物带出来：门牌、设备贴纸、笔记本封面在工程师自然接触的画面里出现，不做集中摆放的 logo 墙。</li>
         <li>由片尾收口：项目名称、双方 Logo 并列，双方顺序按启动会确认的结果排。</li>
-        <li>标识以 VI 提供的正式版本为准，不自行拉伸、改色或叠加其他图形。</li>
+        <li>版本为准：标识以 VI 提供的正式版本为准，不自行拉伸、改色或叠加其他图形。</li>
       </ul>
 
       <h3>露出时的三条边界</h3>
@@ -376,16 +394,8 @@
         <li>工装：涉及我方人员的镜头先拍一条全身，确认标识完整、干净、无遮挡再继续。</li>
       </ul>
 
-      <h3>存储与备份规则</h3>
-      <p>素材当天做两份独立备份并随机打开验证，原始文件在备份确认前不格式化；录屏、相机和录音文件分目录统一命名，后期按镜号入库，避免素材对不上镜头。</p>
-
-      <h3>医院现场四条硬线</h3>
-      <ul>
-        <li>不出现患者正脸、病历、床号、身份证件和通话记录。</li>
-        <li>不出现生产环境账号、真实手机号、内部通讯录。</li>
-        <li>屏幕和纸质文件由院方先行确认，或使用脱敏样例。</li>
-        <li>有疑问的镜头当场标记隔离，不进入粗剪素材库。</li>
-      </ul>
+      <h3>备份与合规底线</h3>
+      <p>素材当天做两份独立备份并随机打开验证，原始文件在备份确认前不格式化；录屏、相机和录音文件分目录统一命名，后期按镜号入库，避免素材对不上镜头。医院现场不出现患者正脸、病历、床号、身份证件和通话记录，不出现生产环境账号与真实手机号，屏幕和纸质文件由院方先行确认或使用脱敏样例；有疑问的镜头当场标记隔离，不进入粗剪素材库。</p>
     </section>
 
     <section id="script">
@@ -396,7 +406,7 @@
       <h3>三分钟的骨架</h3>
       <ul>
         <li>0:00–0:45　医院持续运行与管理挑战</li>
-        <li>0:45–1:08　院方与中金能源技术团队共同梳理业务、设备和数据</li>
+        <li>0:45–1:08　中金能源数智化能源管理平台接入医院</li>
         <li>1:08–1:40　平台总览、多维分析与异常发现</li>
         <li>1:40–2:34　告警、派单、现场处置、结果回填形成闭环</li>
         <li>2:34–3:00　院方与中金能源工程师真实使用，品牌收口</li>
@@ -406,12 +416,12 @@
       <div class="panel">
         <div class="voice"><time>0:00–0:22</time><p>一座医院每一天的高效运转，离不开看不见的能源与后勤保障。从供配电、空调到给排水，每一套系统、每一台设备，都关系着医疗服务的安全与连续。</p></div>
         <div class="voice"><time>0:22–0:45</time><p>随着院区规模和设备数量不断增加，人工巡检、分散记录以及多套系统之间的来回切换，让信息难以及时汇总，也增加了发现异常、追踪问题和协同处置的难度。</p></div>
-        <div class="voice"><time>0:45–1:08</time><p>围绕项目的实际管理需求，院方与中金能源技术团队共同梳理业务流程、设备体系和管理重点，推进能源与后勤管理平台建设。通过统一接入相关设备和系统数据，逐步形成覆盖采集、分析、告警和处置的管理基础。</p></div>
-        <div class="voice"><time>1:08–1:40</time><p>在统一平台上，管理人员可以集中查看能源使用和设备运行情况，并按已具备的管理维度进行分析。趋势、对比和关键状态被放在同一条信息链中，帮助管理人员更及时地掌握变化、发现异常。</p></div>
-        <div class="voice"><time>1:40–2:12</time><p>当设备状态偏离正常范围，系统可以按照已配置的流程生成告警和任务。责任人员接收信息、到达现场、核对设备、反馈处理结果，工单状态随之更新，让问题从发现、派发到处置和复核形成闭环。</p></div>
-        <div class="voice"><time>2:12–2:34</time><p>在真实运行数据持续积累的基础上，分析能力可以结合历史趋势和设备状态，辅助识别异常线索，为运行调整、维护安排和后续分析提供参考。它不替代人员判断，而是为判断提供更完整的数据依据。</p></div>
-        <div class="voice"><time>2:34–2:51</time><p>平台当前已投入使用的范围和场景须由项目团队确认。经确认后，可说明其如何为后勤管理提供实时、直观的运行支撑，并推动信息统一呈现、过程留痕和协同处置。</p></div>
-        <div class="voice"><time>2:51–3:00</time><p>让能源与后勤管理更安全、更高效、更清晰，为医院高质量运行提供持续保障。</p></div>
+        <div class="voice"><time>0:45–1:08</time><p>中金能源自主研发的数智化能源管理平台，面向医院这类设备种类多、监管要求高、能耗构成复杂的场景，把原本分散在不同系统里的设备和数据统一接入，让能源使用与设备运行状况在一套平台中集中呈现。</p></div>
+        <div class="voice"><time>1:08–1:40</time><p>对医院来说，平台带来的第一重价值是把分散的数据收拢起来。供配电、冷机、水泵等系统的运行数据统一进入平台，能耗按已具备的管理维度分区汇总，趋势和对比可以直接查看。过去需要翻台账、问设备、跑现场才能确认的事，现在在屏幕上就能看清楚。</p></div>
+        <div class="voice"><time>1:40–2:12</time><p>第二重价值是让问题能被发现、被处理、被记录。设备状态偏离正常范围时，平台按已配置的流程生成告警并转成任务，责任人员到场核查、反馈结果，工单状态随之更新。整个处置过程在平台里留痕，随时可以回溯发生了什么、结果如何。</p></div>
+        <div class="voice"><time>2:12–2:34</time><p>第三重价值是给管理决策提供依据。运行数据积累到一定量之后，平台可以结合历史趋势和设备状态辅助识别异常线索，为运行方式调整、维护计划安排和后续的用能分析提供参考。分析不替代人的判断，而是让判断建立在更完整的数据上。</p></div>
+        <div class="voice"><time>2:34–2:51</time><p>平台当前已投入使用的范围和场景须由项目团队确认。经确认后，它对医院的意义就不只是看得更清楚，而是让能源和设备管理从依赖经验和手工记录，逐步转向有数据可依、有过程可查。</p></div>
+        <div class="voice"><time>2:51–3:00</time><p>中金能源以自研的数智化能源管理平台为底座，让医院的能源与后勤管理更安全、更高效、更清晰，为医院高质量运行提供持续保障。</p></div>
       </div>
 
       <h3>20 个镜头</h3>
@@ -441,7 +451,7 @@
 
       <p class="group-title">D｜真实使用、持续保障与品牌收口</p>
       <article class="shot"><div class="shot-id"><div><b>17</b><span>2:34–2:45</span></div></div><div><h5>画面</h5><p><strong>院方与我方工程师共同使用</strong>控制中心或办公室查看平台并交流。<span class="brand-mark">双方同框，我方工装标识清晰。</span></p></div><div><h5>机位与动作</h5><p>侧后方人物与屏幕同框；补一次指向屏幕的真实讨论动作和一条双方正面中景。</p></div><div><h5>现场要求</h5><p>人物出镜授权明确；不要求背台词，可录一句自然使用感受备用。</p></div></article>
-      <article class="shot"><div class="shot-id"><div><b>18</b><span>2:45–2:51</span></div></div><div><h5>画面</h5><p><strong>机房平稳运行</strong>设备、管路、巡检人员经过，与开头呼应。<span class="brand-mark">中金能源工程师着工装巡检经过。</span></p></div><div><h5>机位与动作</h5><p>三脚架或稳定器低速横移，工程师从画面中走过；保留设备原声。</p></div><div><h5>现场要求</h5><p>拍摄真实运行状态，不人为切换设备或改变参数。</p></div></article>
+      <article class="shot"><div class="shot-id"><div><b>18</b><span>2:45–2:51</span></div></div><div><h5>画面</h5><p><strong>机房平稳运行</strong>设备、管路、巡检人员经过，与开头呼应。<span class="brand-mark">中金能源工程师着工装巡检经过。</span></p></div><div><h5>机位与动作</h5><p>三脚架或稳定器低速横移，工程师从画面中走过；保留设备原声。</p></div><div><h5>现场要求</h4><p>拍摄真实运行状态，不人为切换设备或改变参数。</p></div></article>
       <article class="shot"><div class="shot-id"><div><b>19</b><span>2:51–2:57</span></div></div><div><h5>画面</h5><p><strong>医院与平台交叉收束</strong>外景、总览、工程师动作三者呼应。</p></div><div><h5>机位与动作</h5><p>从已有素材选择，不另做空泛科技转场；关键词不超过三个。</p></div><div><h5>现场要求</h5><p>价值表述只使用双方确认的中性词，不出现未核验数字。</p></div></article>
       <article class="shot"><div class="shot-id"><div><b>20</b><span>2:57–3:00</span></div></div><div><h5>画面</h5><p><strong>项目名称与双方品牌</strong>静态结束画面。</p></div><div><h5>机位与动作</h5><p>片尾至少停留 3 秒；提供无二维码和可替换信息版本。</p></div><div><h5>现场要求</h5><p>项目名、Logo、排序、联系方式和使用授权统一确认。</p></div></article>
 
@@ -522,40 +532,187 @@
       </div>
     </section>
 
+    <section id="route">
+      <div class="section-head">
+        <h2><span>六</span>技术路线与工具</h2>
+        <p>用工程化的方式做片子：事实、文案、时间线和素材清单都进版本库，画面用代码渲染，交付前有自动检查。</p>
+      </div>
+      <div class="pipe" aria-label="制作管线">
+        <div><b>第一步</b><span>事实与口径确认，落到可版本化的文件</span></div>
+        <div><b>第二步</b><span>文案与分镜配置化，改字不改代码</span></div>
+        <div><b>第三步</b><span>拍摄与录屏，按镜号入库</span></div>
+        <div><b>第四步</b><span>剪辑工程定结构，代码渲染动效</span></div>
+        <div><b>第五步</b><span>自动终检，多版本导出归档</span></div>
+      </div>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>环节</th><th>用什么</th><th>在这支片子里干什么</th></tr></thead>
+          <tbody>
+            <tr><td>版本与协作</td><td>Git / GitHub</td><td>事实表、旁白、分镜、时间线、素材清单和交付记录统一进仓库，改动有记录，换人接手能看懂</td></tr>
+            <tr><td>镜头配方与组件</td><td><a class="tool-link" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noreferrer">video-shotcraft</a></td><td>提供镜头配方、实拍与界面结合的现成做法和可复用组件，减少每次从零搭</td></tr>
+            <tr><td>代码动效渲染</td><td><a class="tool-link" href="https://github.com/remotion-dev/remotion" target="_blank" rel="noreferrer">Remotion</a></td><td>时间线、旁白文案和设计 token 分开管理，改字改数字后重渲结果一致，不出现“这次和上次不一样”</td></tr>
+            <tr><td>素材处理与终检</td><td><a class="tool-link" href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noreferrer">FFmpeg</a> / ffprobe</td><td>转码、抽帧、响度处理，检查时长、帧率、音轨和编码，自动核对最终交付文件</td></tr>
+            <tr><td>剪辑与审片</td><td>剪映专业版 / Premiere Pro / DaVinci Resolve</td><td>粗剪、字幕、配音、音乐、审片和横竖版输出，最终判断在这一层做</td></tr>
+            <tr><td>界面录制</td><td>录屏软件或采集卡</td><td>输出 1920×1080 原始录屏，界面可读、光标路径可控</td></tr>
+            <tr><td>补拍与生成（按需）</td><td><a class="tool-link" href="https://runway.com/product" target="_blank" rel="noreferrer">Runway</a> / <a class="tool-link" href="https://kling.ai/" target="_blank" rel="noreferrer">Kling</a> / <a class="tool-link" href="https://luma.ai/" target="_blank" rel="noreferrer">Luma</a> / Sora</td><td>只补拍不到的空镜和抽象过渡，每次先出 5 到 10 秒样片确认风格，不承担现场证据</td></tr>
+            <tr><td>备选补充</td><td><a class="tool-link" href="https://github.com/motion-canvas/motion-canvas" target="_blank" rel="noreferrer">Motion Canvas</a> / <a class="tool-link" href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noreferrer">ComfyUI</a></td><td>分别作为代码动效的备选方案和本地生成工作流，本阶段不新增部署</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>工程结构</h3>
+      <p>事实、文案、时间线、设计和素材清单各管各的，改一处不动另一处；所有版本从同一条时间线派生，横版、竖版、30 秒版不需要重做。</p>
+      <ul>
+        <li>facts：已确认的事实、来源、确认人和日期</li>
+        <li>copy：旁白、标题、字幕和数字口径</li>
+        <li>timeline：镜头时长、转场和音效钉帧</li>
+        <li>design：品牌色、字体、字号和间距</li>
+        <li>shots：每个镜头一个组件</li>
+        <li>素材清单：镜号、文件名、可用性、隐私状态和备注</li>
+      </ul>
+      <h3>交付前自动检查</h3>
+      <p>类型检查、抽帧预览、静帧比对、时长与音轨核对、逐帧解码检查、交付文件哈希记录，一套命令跑完，避免人工漏项。</p>
+    </section>
+
     <section id="next">
       <div class="section-head">
-        <h2><span>六</span>下一步</h2>
-        <p>只开一次 60 分钟的会，只解决那六项确认，不讨论转场、粒子和配色。确认后立即排勘景和拍摄。</p>
+        <h2><span>七</span>时间安排</h2>
+        <p>六项确认到位后，按这个顺序推进，每一步都有明确产出，不需要再开会。</p>
       </div>
-      <div class="two">
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>时间</th><th>动作</th><th>产出</th><th>负责人</th></tr></thead>
+          <tbody>
+            <tr><td>第 1 到 2 天</td><td>发出拍摄通告，锁定拍摄日期、人员与工装到位时间</td><td>拍摄通告、行程与集合安排</td><td>项目负责人</td></tr>
+            <tr><td>第 3 到 4 天</td><td>平台演示路径彩排，确认可展示功能与回避清单</td><td>彩排通过的录屏样片</td><td>平台演示人员</td></tr>
+            <tr><td>第 5 天</td><td>按分镜定机位、人员和器材清单</td><td>分镜确认版、器材清单</td><td>导演 + 摄影组</td></tr>
+            <tr><td>第 6 天</td><td>拍摄日 1，医院现场：外景、机房、巡检、控制中心、告警处置闭环</td><td>原始素材、当日素材清单</td><td>院方协调 + 摄影组</td></tr>
+            <tr><td>第 7 天</td><td>拍摄日 2，公司与录屏：会议、白板、平台高清录屏</td><td>原始素材、当日素材清单</td><td>技术审核 + 演示人员</td></tr>
+            <tr><td>第 8 天起</td><td>素材整理与粗剪，进入第一次审片</td><td>粗剪版</td><td>剪辑</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="two" style="margin-top:8px">
         <div class="panel">
-          <h4>60 分钟会议怎么走</h4>
+          <h4>每一步的检查点</h4>
           <ul>
-            <li>0 到 5 分钟：说明这次会议要产出什么——六项确认、两个日期、一个终审人。</li>
-            <li>5 到 15 分钟：项目名称与功能口径，正式片名、院区、可展示功能、禁用表述。</li>
-            <li>15 到 25 分钟：拍摄权限与院方安排，日期、区域、陪同人、出镜人员、授权范围。</li>
-            <li>25 到 35 分钟：平台演示准备，演示账号、脱敏数据、一条完整操作路径、回避清单。</li>
-            <li>35 到 45 分钟：品牌与工装，Logo、标准色、中金能源标识工装数量与出场人员。</li>
-            <li>45 到 55 分钟：审片机制与时间表，唯一终审人、每轮截止时间、勘景和拍摄日期。</li>
-            <li>55 到 60 分钟：逐条复述结论、明确责任人和交付时间，签字后散会。</li>
+            <li>通告发出前：六项确认是否已有书面结论。</li>
+            <li>彩排完成后：可展示功能、回避清单、录屏质量是否明确。</li>
+            <li>开拍前：机位表、器材清单、工装和人员是否全部到位。</li>
+            <li>每天离场前：镜号是否核对完整，闭环六段是否齐全，素材是否双备份。</li>
+            <li>粗剪交付前：事实、顺序、旁白、时长是否已经锁定。</li>
           </ul>
         </div>
         <div class="panel">
-          <h4>确认之后的两周</h4>
+          <h4>尚未关闭的风险</h4>
           <ul>
-            <li>第 1 到 2 天：发出拍摄通告，锁定勘景与演练时间。</li>
-            <li>第 3 到 4 天：完成 45 分钟现场勘景和 60 分钟平台演练，形成勘景记录。</li>
-            <li>第 5 天：按勘景结论定拍摄日、机位、人员和器材清单，标识工装到位。</li>
-            <li>第 6 到 7 天：拍摄日 1（医院）与拍摄日 2（公司与录屏），每天离场前完成检查单。</li>
-            <li>第 8 天起：素材整理与粗剪，粗剪完成后进入第一次审片。</li>
+            <li>正式项目名称、具体院区与片尾署名。</li>
+            <li>平台功能上线状态、“已投入使用”的适用范围和可公开数据。</li>
+            <li>唯一终审人、每轮修改次数与发布渠道。</li>
           </ul>
-          <p style="margin-top:16px">这三件事不解决，片子不能对外使用：正式项目名称、具体院区与片尾署名；平台功能上线状态、“已投入使用”的适用范围和可公开数据；唯一终审人、每轮修改次数与发布渠道。</p>
+          <p style="margin-top:14px">这三件事不解决，片子不能对外使用。其余按上表推进即可。</p>
         </div>
       </div>
     </section>
 
-    <p class="closing">仁济项目宣传片拍摄方案 · 2026 年 11 月 10 日 · 项目事实与公开口径以启动会确认记录为准</p>
+    <p class="closing">仁济项目宣传片拍摄方案 · 2026 年 11 月 10 日 · 项目事实与公开口径以启动会确认记录为准<br>方法论与工具说明见 <a href="ai-video-methodology.html">AI 宣传片制作方法论</a></p>
   </main>
 
+  <script>
+    const STORE_KEY = 'renji-shooting-plan-v1';
+    const EDITABLE = 'main h1, main h2, main h3, main p, main li, main th, main td, main .eyebrow, main .facts b, main .facts div span';
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+    let editing = false;
+    let toastTimer;
+
+    $$('main *').forEach((element) => {
+      if (element.matches(EDITABLE) && !element.dataset.edit) {
+        element.dataset.edit = 'e' + ($$('[data-edit]').length);
+      }
+    });
+
+    function collect() {
+      return {
+        html: Object.fromEntries($$('[data-edit]').map((element) => [element.dataset.edit, element.innerHTML])),
+        savedAt: new Date().toISOString(),
+      };
+    }
+
+    function apply(state) {
+      if (!state || typeof state !== 'object') return;
+      $$('[data-edit]').forEach((element) => {
+        const value = state.html?.[element.dataset.edit];
+        if (typeof value === 'string') element.innerHTML = value;
+      });
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(STORE_KEY, JSON.stringify(collect()));
+        $('#save-status').textContent = '已自动保存 · ' + new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+      } catch (error) {
+        $('#save-status').textContent = '浏览器无法保存，请下载文字版留存';
+      }
+    }
+
+    function notify(text) {
+      $('#save-status').textContent = text;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { $('#save-status').textContent = '已自动保存'; }, 2800);
+    }
+
+    try {
+      apply(JSON.parse(localStorage.getItem(STORE_KEY) || 'null'));
+    } catch (error) {
+      /* 忽略损坏的本地数据 */
+    }
+
+    $('#edit').addEventListener('click', () => {
+      editing = !editing;
+      document.body.classList.toggle('editing', editing);
+      $$('[data-edit]').forEach((element) => {
+        element.contentEditable = editing ? 'plaintext-only' : 'false';
+        element.spellcheck = false;
+      });
+      $('#edit').textContent = editing ? '完成编辑' : '编辑内容';
+      $('#edit').setAttribute('aria-pressed', String(editing));
+      if (editing) {
+        notify('点击带虚线的文字即可直接修改');
+      } else {
+        save();
+      }
+    });
+
+    document.addEventListener('input', (event) => {
+      if (event.target.closest('[data-edit]')) save();
+    });
+
+    $('#print').addEventListener('click', () => window.print());
+
+    $('#download').addEventListener('click', () => {
+      save();
+      const clone = document.documentElement.cloneNode(true);
+      clone.querySelector('body').classList.remove('editing');
+      clone.querySelectorAll('[data-edit]').forEach((element) => element.removeAttribute('contenteditable'));
+      const editButton = clone.querySelector('#edit');
+      if (editButton) {
+        editButton.textContent = '编辑内容';
+        editButton.setAttribute('aria-pressed', 'false');
+      }
+      const status = clone.querySelector('#save-status');
+      if (status) status.textContent = '已载入方案';
+      const blob = new Blob(['<!doctype html>' + clone.outerHTML], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = '仁济项目宣传片拍摄方案_文字版.html';
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+      notify('已下载文字版');
+    });
+  </script>
 </body>
 </html>
