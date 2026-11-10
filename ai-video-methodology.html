@@ -239,6 +239,7 @@
     .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 6px; }
     .toc a { padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--deep); font-size: 12.5px; font-weight: 700; text-decoration: none; }
     .toc a:hover { border-color: var(--green); color: var(--green); }
+    .lead-note { margin: 30px 0 0; color: var(--muted); font-size: 14px; }
     .renji-grid { grid-template-columns: 1.05fr .95fr; }
     .story { display: grid; gap: 10px; margin-top: 18px; }
     .story div { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
@@ -465,9 +466,26 @@
     <section id="route">
       <div class="section-head">
         <span class="num">03</span>
-        <h2>工程化技术路线：从零到交付怎么跑通</h2>
-        <p>GitHub 管版本和协作，Remotion 管确定性画面，FFmpeg 管交付检查，剪辑软件负责人工判断和最终时间线。这一章回答的不是「用什么工具」，而是「怎样在两天内跑通一次完整链路，并且以后每次都能重跑」。</p>
+        <h2>技术路线：一条宣传片从策划做到交付</h2>
+        <p>先说通用的做法：定脚本和策划 → 拍素材 → 剪成片 → 做镜头之间的衔接和动效 → 审片交付。这一章的前半段讲的正是这五步，后半段才讲怎么让它可重复、可协作、少返工——那是给执行的人看的，不是另一套拍片流程。</p>
       </div>
+      <div class="sub" id="route-basics">
+        <h3><em>03.0</em>通用做法：一条宣传片本来就走的五步</h3>
+        <p>这一步不需要任何工具知识，就是所有宣传片通用的做法。你说的「脚本和策划 → 拍素材 → 制作镜头 → 镜头间的衔接和动效」是对的，我们把它补上最后一步，再标出每一步最容易翻车的地方。</p>
+        <p class="note-line">对应第一章的七个阶段：脚本与策划 = 目标冻结 + 事实与权限冻结 + 脚本与分镜；拍素材 = 素材采集；制作镜头 = 粗剪定结构；衔接与动效 = 包装与声音；审片交付 = 审片、交付与复盘。同一件事，两种说法——七阶段按管理节点拆，五步按干活顺序走。</p>
+        <table class="spec">
+          <thead><tr><th>步骤</th><th>通用做法</th><th>这一步要产出</th><th>翻车信号</th></tr></thead>
+          <tbody>
+            <tr><td>① 脚本与策划</td><td>定给谁看、讲什么、多长，写出旁白和镜头清单。</td><td>一句主题 + 分段脚本 + 镜头清单。</td><td>边拍边想讲什么；脚本先不管证据。</td></tr>
+            <tr><td>② 拍素材</td><td>按镜头清单拍：现场、人物、设备、界面录屏。</td><td>原始素材 + 素材清单。</td><td>拍一堆用不上的；录屏里带敏感信息。</td></tr>
+            <tr><td>③ 制作镜头（剪成片）</td><td>把素材剪成一个能看懂的故事，暂时不加包装。</td><td>粗剪版：临时配音、基础字幕。</td><td>先做动效再剪结构；剪不下去是因为故事没定。</td></tr>
+            <tr><td>④ 衔接与动效（包装）</td><td>转场、字幕、数据图表、参数标注，配音效和音乐。</td><td>精剪版 + 多版本。</td><td>动效盖住真实界面；好看但看不懂。</td></tr>
+            <tr><td>⑤ 审片与交付</td><td>核事实、隐私、授权、编码，再出各个版本。</td><td>母版 + 短版 + 无字幕底片 + 字幕文件 + 工程包。</td><td>靠聊天记录交付；素材和成片散在各处。</td></tr>
+          </tbody>
+        </table>
+        <p class="note-line">技术路线不是另一套拍片流程，它就是这五步。区别只有一处：每一步多写一句「改哪一处、怎么验证没改错」。通用做法靠熟练度和记忆，工程化只是把这一部分交给文件和命令——讲什么、拍什么、好不好的判断权仍然在人手里。</p>
+      </div>
+      <p class="lead-note">下面是这五步在工程上的落点，给真正动手的人看：</p>
       <div class="route" aria-label="技术流程">
         <div><b>① 事实源</b><span>facts.yaml<br>唯一真相 + 自动校验</span></div>
         <div><b>② 文案</b><span>copy.ts<br>旁白与数字口径</span></div>
@@ -477,16 +495,17 @@
         <div><b>⑥ 交付</b><span>FFmpeg + 打包<br>多版本与哈希</span></div>
       </div>
       <nav class="toc" aria-label="本章速查">
-        <a href="#route-criteria">03.1 跑通判据</a>
-        <a href="#route-flow">03.2 单向数据流</a>
-        <a href="#route-facts">03.3 事实源契约</a>
-        <a href="#route-repo">03.4 仓库结构</a>
-        <a href="#route-env">03.5 环境基线</a>
-        <a href="#route-commands">03.6 命令流水线</a>
-        <a href="#route-pitfalls">03.7 易卡点</a>
-        <a href="#route-rollback">03.8 回滚手册</a>
-        <a href="#route-plan">03.9 五天路径</a>
-        <a href="#route-license">03.10 授权合规</a>
+        <a href="#route-basics">通用五步</a>
+        <a href="#route-criteria">什么叫跑通</a>
+        <a href="#route-flow">五步落到工程</a>
+        <a href="#route-facts">事实怎么记</a>
+        <a href="#route-repo">文件放哪</a>
+        <a href="#route-env">开工前检查</a>
+        <a href="#route-commands">一条命令跑完</a>
+        <a href="#route-pitfalls">容易卡住的点</a>
+        <a href="#route-rollback">出问题怎么回退</a>
+        <a href="#route-plan">五天走完</a>
+        <a href="#route-license">授权与合规</a>
       </nav>
       <div class="sub" id="route-criteria">
         <h3><em>03.1</em>先立判据：什么才算「跑通」</h3>
